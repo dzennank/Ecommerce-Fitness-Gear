@@ -5,22 +5,22 @@ document.getElementById("registration-form").addEventListener("submit", function
   
 
   const sendRegistrationData = () => {
-        // const xhr = new XMLHttpRequest();
-        // xhr.open("POST", "../../../backend/api/register_controller.php", true);
-        // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "../../../backend/api/register_controller.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       
-        // xhr.onload = function() {
+        xhr.onload = function() {
      
-        //     console.log(this)
-        //     const response = this.responseText;
-        //     console.log(response)
-        //     if (response === "Connected successfully") {
-        //       location.href = "../homePage/homePage.html"
-        //     } else {
-        //       alert("Error")
-        //     }
+            console.log(this)
+            const response = this.responseText;
+            console.log(response)
+            if (response === "Connected successfully") {
+              location.href = "../homePage/homePage.html"
+            } else {
+              alert("Error")
+            }
           
-        // };
+        };
       
         const username = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
@@ -43,7 +43,7 @@ document.getElementById("registration-form").addEventListener("submit", function
            + "&jmbg" + encodeURIComponent(jmbg) + "&phone=" + encodeURIComponent(phone)
            + "&img=" + encodeURIComponent(img) + "&user_type" + encodeURIComponent(user_type)
           ;
-        // xhr.send(data);
+        xhr.send(data);
         console.log(data)
         
       
