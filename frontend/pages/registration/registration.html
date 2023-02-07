@@ -3,53 +3,63 @@
   <head>
     <meta charset="UTF-8">
     <title>Fitness E-commerce Registration</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./registration.css">
   </head>
   <body>
     <div class="container">
       <h2>Fitness E-commerce Registration</h2>
-      <form>
-        <label for="firstName">First Name:</label>
+      <form id="registration-form"">
+        <label for="firstName">Ime:</label>
         <input type="text" id="firstName" name="firstName" required>
         
-        <label for="lastName">Last Name:</label>
+        <label for="lastName">Prezime:</label>
         <input type="text" id="lastName" name="lastName" required>
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         
-        <label for="password">Password:</label>
+        <label for="password">Lozinka:</label>
         <input type="password" id="password" name="password" required>
         
-        <label for="confirmPassword">Confirm Password:</label>
+        <label for="confirmPassword">Potvrdi Lozinku:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
         
-        <label for="address1">Address Line 1:</label>
-        <input type="text" id="address1" name="address1" required>
+        <label for="sex">Pol:</label>
+        <input type="text" id="sex" name="address1" required>
         
-        <label for="address2">Address Line 2:</label>
-        <input type="text" id="address2" name="address2">
+        <label for="">Mesto Rodjenja:</label>
+        <input type="text" id="place_birth" name="place_birth">
         
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-        
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" required>
-        
-        <label for="zip">Zip Code:</label>
-        <input type="text" id="zip" name="zip" required>
-        
-        <label for="country">Country:</label>
+        <label for="city">Drzava Rodjenja:</label>
         <input type="text" id="country" name="country" required>
         
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required>
-        
-        <label for="birthday">Birthday:</label>
+        <label for="">Datum Rodjenja:</label>
         <input type="date" id="birthday" name="birthday" required>
         
-        <input type="submit" value="Submit">
+        <label for="">JMBG:</label>
+        <input type="text" id="jmbg" name="jmbg" required>
+        
+        <label for="phone">Telefon:</label>
+        <input type="text" id="phone" name="phone" required>
+        
+        <label for="img">Slika:</label>
+        <input type="text" id="img" name="img" required>
+        
+        <label for="">Tip:</label>
+        <select id="user_type">
+            <option>
+                Kupac
+            </option>
+            <option>
+                Prodavac
+            </option>
+            
+        </select>
+        
+        <input type="submit" value="Submit" class="submit">
       </form>
     </div>
+
+    <script src="./registration.js"></script>
   </body>
 </html>
