@@ -24,8 +24,10 @@
         <label for="confirmPassword">Potvrdi Lozinku:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
         
-        <label for="sex">Pol:</label>
-        <input type="text" id="sex" name="address1" required>
+        <label>Pol :</label>
+          <input type="radio" name="sex" value="musko"> Musko
+          <input type="radio" name="sex" value="zensko"> Zensko
+        
         
         <label for="">Mesto Rodjenja:</label>
         <input type="text" id="place_birth" name="place_birth">
@@ -44,17 +46,9 @@
         
         <label for="img">Slika:</label>
         <input type="text" id="img" name="img" required>
-        
-        <label for="">Tip:</label>
-        <select id="user_type">
-            <option>
-                Kupac
-            </option>
-            <option>
-                Prodavac
-            </option>
-            
-        </select>
+        <label>Tip :</label>
+        <input type="radio" name="type" value="kupac"> Kupac
+        <input type="radio" name="type" value="prodavac"> Prodavac
         
         <input type="submit" value="Submit" class="submit">
       </form>
