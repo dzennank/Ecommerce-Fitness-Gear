@@ -17,6 +17,9 @@ document
     const response = JSON.parse(this.responseText);
     console.log(response);
     if (response.success) {
+        localStorage.setItem("user", JSON.stringify(response))
+        const user = JSON.parse(localStorage.getItem('user'));
+        // console.log(user)
       location.href = "../homePage/homePage.html";
     } else {
       alert("Error");

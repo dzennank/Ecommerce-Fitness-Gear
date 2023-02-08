@@ -15,3 +15,8 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
 }
+const user = JSON.parse(localStorage.getItem('user'));
+console.log(user)
+
+const userInfo = document.getElementById("header-user-name");
+userInfo.innerHTML = `${user.ime}  ${user.prezime}`

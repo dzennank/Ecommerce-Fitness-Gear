@@ -1,54 +1,73 @@
 .header-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #EEB411;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .header-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-logo img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .header-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header-menu li {
-    margin: 0 20px;
-    
-  }
-  
-  .header-menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #EEB411;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .header-cart a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #114BEE;
-    color: #fff;
-    font-size: 20px;
-  }
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.header-user-info img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#header-user-name {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #fff;
+}
+
+.header-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu li {
+  margin: 0 20px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-cart a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #114BEE;
+  color: #fff;
+  font-size: 20px;
+}
+
   
   /* IMAGE SLIDER SECTION */
   .slider {
