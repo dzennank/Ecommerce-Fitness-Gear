@@ -6,6 +6,14 @@ document
   });
 
 const sendRegistrationData = () => {
+
+  // const form = document.getElementById('registration-form');
+  // const image = document.getElementById('image');
+
+  // const formData = new FormData();
+  
+  // console.log(formData.append('image', image.files[0]))
+
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../../backend/api/register_controller.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -14,7 +22,7 @@ const sendRegistrationData = () => {
     const response = JSON.parse(this.responseText);
     console.log(response);
     if (response.success) {
-      location.href = "../homePage/homePage.html";
+      location.href = "../login/login.html";
     } else {
       alert("Error");
     }
@@ -31,7 +39,7 @@ const sendRegistrationData = () => {
   const birthday = document.getElementById("birthday").value;
   const jmbg = document.getElementById("jmbg").value;
   const phone = document.getElementById("phone").value;
-  const img = document.getElementById("img").value;
+  // const img = document.getElementById("img").value;
   const user_type = document.querySelector('input[name="type"]:checked').value;
 
   //Password validation
@@ -65,7 +73,7 @@ const sendRegistrationData = () => {
   encodeURIComponent(img) +
   "&user_type=" +
   encodeURIComponent(user_type);
-// xhr.send(data);
+xhr.send(data);
  } else {
   alert("Lozinka mora poceti sa velikim slovom i sadrzati barem jedan broj i spec karakter. Takodje lozinka se mora poklapati sa unetom potvrdjenom lozinkom!!")
  }
