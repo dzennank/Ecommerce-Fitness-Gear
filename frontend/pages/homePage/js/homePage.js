@@ -18,5 +18,14 @@ function showSlides(n) {
 const user = JSON.parse(localStorage.getItem('user'));
 console.log(user)
 
+//inesrting name of logined user
 const userInfo = document.getElementById("header-user-name");
 userInfo.innerHTML = `${user.ime}  ${user.prezime}`
+
+
+if(user.tip === "Kupac") {
+  
+  const myProducts = document.getElementById("prodavac");
+  
+  myProducts.innerHTML = "My Products"
+} 
