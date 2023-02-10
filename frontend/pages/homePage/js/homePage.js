@@ -1,9 +1,17 @@
+import { fatchHomePageData } from 'http://localhost/Web%20Programiranje/frontend/pages/homePage/js/fatchHomePageData.js';
+
+fatchHomePageData().then(data => {
+  console.log(data);
+});
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
+
 
 function showSlides(n) {
   var i;
@@ -29,3 +37,4 @@ if(user.tip === "Kupac") {
   
   myProducts.innerHTML = "My Products"
 } 
+
