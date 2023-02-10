@@ -1,23 +1,23 @@
 <?php
 include("../dbcon.php");
 
-// $query = "
-//     SELECT * FROM supplements
-// ";
-// $query_run = mysqli_query($conn, $query);
 
-// $supp_array = mysqli_fetch_array($query_run);
 
-// if ($query_run) {
-//     $response = array("success" => true, 
-//     "Name" => $supp_array['supplement_name'], 
-//     "Price" => $supp_array['supplement_price'], 
-//     "Desc" => $supp_array['supplement_desc'], 
-//     "img" => $supp_array['supplement_image']);
-//   } else {
-//     $response = array("success" => false);
-//   }
 
-// print_r($supp_array);
+$query = "SELECT * FROM supplements";
+$query_run = mysqli_query($conn, $query);
 
-// echo json_encode($response);
+
+if (mysqli_num_rows($query_run) > 0) {
+    
+    $products = array();
+
+    // Fetch each row and store it in the array
+    while($row = mysqli_fetch_assoc($query_run)) {
+        $products[] = $row;
+    }
+    echo json_encode($products);
+  } else {
+    echo json_encode(array("message" => "No products found."));
+  }
+
