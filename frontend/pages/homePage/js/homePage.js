@@ -26,6 +26,7 @@ clothes.forEach(clot => {
   clotPrice.textContent = clot.clothes_price;
 
   const viewMoreButton = document.createElement('a');
+  viewMoreButton.href = "../../pages/singleProductPage/singleProduct.html?id=" + clot.clothes_id
   viewMoreButton.textContent = 'View More';
 
   clotBox.appendChild(clotImg);
@@ -35,6 +36,67 @@ clothes.forEach(clot => {
 
   clotBox.appendChild(hover)
   clothesContainer.appendChild(clotBox);
+
+}); 
+
+equip.forEach(equip => {
+  const equipContainer = document.getElementById("equip-container")
+  const equipBox = document.createElement('div');
+  equipBox.classList.add('product');
+
+  const hover = document.createElement('div')
+  hover.classList.add('product-hover');
+
+  const equipImg = document.createElement('img');
+  equipImg.src = equip.equipment_image
+  equipImg.alt = equip.equipment_name
+
+  const equipName = document.createElement('h3')
+  equipName.textContent = equip.equipment_name;
+
+  const equipPrice = document.createElement('p');
+  equipPrice.textContent = equip.equipment_price;
+
+  const viewMoreButton = document.createElement('a');
+  viewMoreButton.textContent = 'View More';
+
+  equipBox.appendChild(equipImg);
+  equipBox.appendChild(equipName);
+  hover.appendChild(equipPrice);
+  hover.appendChild(viewMoreButton)
+
+  equipBox.appendChild(hover)
+  equipContainer.appendChild(equipBox);
+})
+
+supp.forEach(supp => {
+  const suppContainer = document.getElementById("supp-container")
+  const suppBox = document.createElement('div');
+  suppBox.classList.add('product');
+
+  const hover = document.createElement('div')
+  hover.classList.add('product-hover');
+
+  const suppImg = document.createElement('img');
+  suppImg.src = supp.supplement_image
+  suppImg.alt = supp.supplement_name
+
+  const suppName = document.createElement('h3')
+  suppName.textContent = supp.supplement_name;
+
+  const suppPrice = document.createElement('p');
+  suppPrice.textContent = supp.supplement_price;
+
+  const viewMoreButton = document.createElement('a');
+  viewMoreButton.textContent = 'View More';
+
+  suppBox.appendChild(suppImg);
+  suppBox.appendChild(suppName);
+  hover.appendChild(suppPrice);
+  hover.appendChild(viewMoreButton)
+
+  suppBox.appendChild(hover)
+  suppContainer.appendChild(suppBox);
 
 }); 
 });

@@ -129,6 +129,12 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   
   .product {
     width: 200px;
@@ -154,11 +160,11 @@
     transition: all 0.3s ease-in-out;
   }
   
-  #fitness-clothes {
+  .headings {
     text-align: center;
   }
   
-  #fitness-clothes h2 {
+  .headings h2 {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
