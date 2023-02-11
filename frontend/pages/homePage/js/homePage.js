@@ -1,7 +1,9 @@
 import { fatchHomePageData } from 'http://localhost/Web%20Programiranje/frontend/pages/homePage/js/fatchHomePageData.js';
 
-fatchHomePageData().then(data => {
-  console.log(data);
+fatchHomePageData().then(([supp, equip, clothes]) => {
+  console.log("SUPLEMENTI: ", supp)
+  console.log("OPREMA: ", equip)
+  console.log("ODECA: ", clothes)
 });
 
 
