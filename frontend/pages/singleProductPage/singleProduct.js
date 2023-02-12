@@ -27,14 +27,34 @@ const fatchSingleProductData = () => {
 fatchSingleProductData()
   .then((response) => {
     console.log(response);
-    const productName = document.getElementById("productName");
-    const price = document.getElementById("price");
-    const desc = document.getElementById("desc");
-    const img = document.getElementById("image");
-    productName.textContent = response.data.clothes_name;
-    price.textContent = response.data.clothes_price + "$";
-    desc.textContent = response.data.clothes_desc;
-    img.src = response.data.clothes_image;
+    if (response.name === "clothes") {
+      const productName = document.getElementById("productName");
+      const price = document.getElementById("price");
+      const desc = document.getElementById("desc");
+      const img = document.getElementById("image");
+      productName.textContent = response.data.clothes_name;
+      price.textContent = response.data.clothes_price + "$";
+      desc.textContent = response.data.clothes_desc;
+      img.src = response.data.clothes_image;
+    } else if (response.name === "equipment") {
+      const productName = document.getElementById("productName");
+      const price = document.getElementById("price");
+      const desc = document.getElementById("desc");
+      const img = document.getElementById("image");
+      productName.textContent = response.data.equipment_name;
+      price.textContent = response.data.equipment_price + "$";
+      desc.textContent = response.data.equipment_desc;
+      img.src = response.data.equipment_image;
+    } else {
+      const productName = document.getElementById("productName");
+      const price = document.getElementById("price");
+      const desc = document.getElementById("desc");
+      const img = document.getElementById("image");
+      productName.textContent = response.data.supplement_name;
+      price.textContent = response.data.supplement_price + "$";
+      desc.textContent = response.data.supplement_desc;
+      img.src = response.data.supplement_image;
+    }
   })
   .catch((err) => {
     console.log(err);

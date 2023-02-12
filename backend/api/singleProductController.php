@@ -17,13 +17,13 @@ class FetchSingleProductController
         } else if ($name == 'equipment') {
             $query = "SELECT * FROM equipment WHERE equipment_id = '$id'";
         } else {
-            $query = "SELECT * FROM supplements WHERE supplements_id = '$id'";
+            $query = "SELECT * FROM supplements WHERE supplement_id = '$id'";
         }
         $query_run = mysqli_query($conn, $query);
         if ($query_run) {
             if (mysqli_num_rows($query_run) > 0) {
                 $data = mysqli_fetch_assoc($query_run);
-                echo json_encode(array("message" => "Product found.", "data" => $data));
+                echo json_encode(array("message" => "Product found.","name" => $name, "data" => $data));
             } else {
                 echo json_encode(array("message" => "No product found."));
             }

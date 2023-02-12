@@ -60,6 +60,10 @@ fatchHomePageData().then(([supp, clothes, equip]) => {
     equipPrice.textContent = equip.equipment_price;
 
     const viewMoreButton = document.createElement("a");
+    viewMoreButton.href =
+      "../../pages/singleProductPage/singleProduct.html?id=" +
+      equip.equipment_id +
+      "&name=equipment";
     viewMoreButton.textContent = "View More";
 
     equipBox.appendChild(equipImg);
@@ -90,6 +94,10 @@ fatchHomePageData().then(([supp, clothes, equip]) => {
     suppPrice.textContent = supp.supplement_price;
 
     const viewMoreButton = document.createElement("a");
+    viewMoreButton.href =
+      "../../pages/singleProductPage/singleProduct.html?id=" +
+      supp.supplement_id +
+      "&name=supplement";
     viewMoreButton.textContent = "View More";
 
     suppBox.appendChild(suppImg);
