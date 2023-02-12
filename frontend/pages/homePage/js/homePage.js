@@ -9,6 +9,7 @@ fatchHomePageData().then(([supp, clothes, equip]) => {
   console.log("ODECA: ", clothes)
 
 clothes.forEach(clot => {
+
   const clotBox = document.createElement('div');
   clotBox.classList.add('product');
 
@@ -26,7 +27,7 @@ clothes.forEach(clot => {
   clotPrice.textContent = clot.clothes_price;
 
   const viewMoreButton = document.createElement('a');
-  viewMoreButton.href = "../../pages/singleProductPage/singleProduct.html?id=" + clot.clothes_id
+  viewMoreButton.href = "../../pages/singleProductPage/singleProduct.html?id=" + clot.clothes_id + "&name=clothes";
   viewMoreButton.textContent = 'View More';
 
   clotBox.appendChild(clotImg);

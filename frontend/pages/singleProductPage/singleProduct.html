@@ -31,15 +31,15 @@
         
         <div class="product-page">
             <div class="image-container">
-              <img src="https://www.intersport.rs/media/catalog/product/cache/382907d7f48ae2519bf16cd5f39b77f9/I/B/IB8161_4_APPAREL_On_Model_Back_View_white.jpg" alt="Product Image">
+              <img id="image" src="" alt="Product Image">
             </div>
             <div class="info-container">
-              <h2 class="product-name">Product Name</h2>
+              <h2 id="productName" class="product-name"></h2>
               <div class="price-container">
                 <span class="price">Price : $50</span>
-                <span class="discounted-price">$40</span>
+                <span id="price" class="discounted-price"></span>
               </div>
-              <p class="product-description">Product description goes here...</p>
+              <p id="desc" class="product-description">Product description goes here...</p>
               <button class="add-to-cart-button">Add to Cart</button>
             </div>
           </div>
@@ -51,7 +51,7 @@
             </div>
           </footer>
           
-          
+        <script src="./singleProduct.js"></script>  
     </body>
     
 </html>
