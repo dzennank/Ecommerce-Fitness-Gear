@@ -140,7 +140,9 @@ const userInfo = document.getElementById("header-user-name");
 userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
 
 if (user.tip === "Kupac") {
-  const myProducts = document.getElementById("prodavac");
 
+  const myProducts = document.getElementById("prodavac");
   myProducts.innerHTML = "My Products";
+  myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
+
 }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./supplements.css">
+    <title>My Products</title>
+  </head>
+  <body>
+    <header>
+        <nav class="header-nav">
+          <div class="header-logo">
+            <img src="https://thumbs.dreamstime.com/b/e-commerce-business-fitness-dumbbell-icon-vector-logo-design-216617361.jpg"
+             alt="logo">
+          </div>
+          <div class="header-user-info">
+            <img src="https://thumbs.dreamstime.com/b/businessman-icon-vecto-vector-male-avatar-profile-image-182095609.jpg" alt="user image">
+            <span id="header-user-name"></span>
+          </div>
+          <ul class="header-menu">
+            <li><a href="#">Supplements</a></li>
+            <li><a href="#">Attachments</a></li>
+            <li><a href="#">Clothes</a></li>
+            <li><a id="prodavac"></a></li>
+            
+          </ul>
+          <div class="header-cart">
+            <a href="#">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </div>   
+        </nav>
+    </header>
+
+
+    <div class="filter-container">
+      <h2>Filter By:</h2>
+      <div class="filters">
+          <form>
+            <label for="type-select">Type:</label>
+            <select id="type-select">
+              <option value="">All</option>
+              <option value="type1">Type 1</option>
+              <option value="type2">Type 2</option>
+              <option value="type3">Type 3</option>
+            </select>
+            <label for="price-select">Price:</label>
+            <select id="price-select">
+              <option value="">All</option>
+              <option value="price1">Price 1</option>
+              <option value="price2">Price 2</option>
+              <option value="price3">Price 3</option>
+            </select>
+            <label for="gender-select">Gender:</label>
+            <select id="gender-select">
+              <option value="">All</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </form>
+
+      </div>
+      <button class="create-new-product-btn">Create New Product</button>
+
+    </div>
+    <div id="product-container" class="product-list">
+      <!-- <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>Price: $10</p>
+        <p>Type: Type 1</p>
+        <p>Gender: Male</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>Price: $20</p>
+        <p>Type: Type 2</p>
+        <p>Gender: Female</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Price: $15</p>
+        <p>Type: Type 3</p>
+        <p>Gender: Male</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Price: $15</p>
+        <p>Type: Type 3</p>
+        <p>Gender: Male</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Price: $15</p>
+        <p>Type: Type 3</p>
+        <p>Gender: Male</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Price: $15</p>
+        <p>Type: Type 3</p>
+        <p>Gender: Male</p>
+      </div>
+      <div class="product">
+        <img src="https://www.pansport.rs/sites/default/files/styles/product/public/images/products/pan_isolat_3kg.png?itok=WAnS1lN-" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>Price: $15</p>
+        <p>Type: Type 3</p>
+        <p>Gender: Male</p>
+      </div> -->
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <p>Copyright &copy; 2022 Fitness Gear</p>
+          <p>All rights reserved</p>
+        </div>
+      </footer>
+
+      <script src="./supplements.js"></script>
+  </body>
+</html>
