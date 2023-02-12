@@ -1,22 +1,22 @@
 <?php
 include("../dbcon.php");
 
-  $username = $_POST["username"];
-  $lastName = $_POST["lastName"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $confirmPassword = $_POST["confirmPassword"];
-  $sex = $_POST["sex"];
-  $place_birth = $_POST["place_birth"];
-  $country = $_POST["country"];
-  $birthday = $_POST["birthday"];
-  $jmbg = $_POST["jmbg"];
-  $phone = $_POST["phone"];
-  $img = $_POST["img"];
-  $user_type = $_POST["user_type"];
-  // Connect to database and insert new user
+$username = $_POST["username"];
+$lastName = $_POST["lastName"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+$confirmPassword = $_POST["confirmPassword"];
+$sex = $_POST["sex"];
+$place_birth = $_POST["place_birth"];
+$country = $_POST["country"];
+$birthday = $_POST["birthday"];
+$jmbg = $_POST["jmbg"];
+$phone = $_POST["phone"];
+$img = $_POST["img"];
+$user_type = $_POST["user_type"];
+// Connect to database and insert new user
 
-  $query = "INSERT INTO users (
+$query = "INSERT INTO users (
     ime, 
     prezime,
     email, 
@@ -44,12 +44,12 @@ include("../dbcon.php");
         '$img',
         '$user_type'
         )";
-  $result = mysqli_query($conn, $query);
+$result = mysqli_query($conn, $query);
 
-  if ($result) {
-    $response = array("success" => true);
-  } else {
-    $response = array("success" => false);
-  }
+if ($result) {
+  $response = array("success" => true);
+} else {
+  $response = array("success" => false);
+}
 
-  echo json_encode($response);
+echo json_encode($response);

@@ -1,7 +1,9 @@
 <?php
 
-class FetchSingleProductController {
-    public function fetchSingleProduct() {
+class FetchSingleProductController
+{
+    public function fetchSingleProduct()
+    {
         $id = $_GET['id'];
         $name = $_GET['name'];
 
@@ -10,9 +12,9 @@ class FetchSingleProductController {
         $id = mysqli_real_escape_string($conn, $id);
         $name = mysqli_real_escape_string($conn, $name);
 
-        if($name == 'clothes') {
+        if ($name == 'clothes') {
             $query = "SELECT * FROM clothes WHERE clothes_id = '$id'";
-        } else if($name == 'equipment') {
+        } else if ($name == 'equipment') {
             $query = "SELECT * FROM equipment WHERE equipment_id = '$id'";
         } else {
             $query = "SELECT * FROM supplements WHERE supplements_id = '$id'";
@@ -33,30 +35,4 @@ class FetchSingleProductController {
 
 $controller = new FetchSingleProductController();
 $controller->fetchSingleProduct();
-
-
-
-// $id = $_GET['id'];
-// $name = $_GET['name'];
-
-// if($name == 'clothes') {
-
-//     $query = "SELECT * FROM clothes WHERE id = $id";
-//     $query_run = mysqli_query($conn, $query);
-
-
-// }
-
-// if (mysqli_num_rows($query_run) > 0) {
-    
-//     $products = array();
-
-//     // Fetch each row and store it in the array
-//     while($row = mysqli_fetch_assoc($query_run)) {
-//         $products[] = $row;
-//     }
-//     echo json_encode($products);
-//   } else {
-//     echo json_encode(array("message" => "No products found."));
-//   }
 

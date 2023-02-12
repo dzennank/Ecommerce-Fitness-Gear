@@ -6,12 +6,11 @@ document
   });
 
 const sendRegistrationData = () => {
-
   // const form = document.getElementById('registration-form');
   // const image = document.getElementById('image');
 
   // const formData = new FormData();
-  
+
   // console.log(formData.append('image', image.files[0]))
 
   const xhr = new XMLHttpRequest();
@@ -43,41 +42,41 @@ const sendRegistrationData = () => {
   const user_type = document.querySelector('input[name="type"]:checked').value;
 
   //Password validation
-  let pattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])([A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,})$/;
- 
- if (pattern.test(password) && password === confrimPassword) {
-  const data =
-  "username=" +
-  encodeURIComponent(username) +
-  "&lastName=" +
-  encodeURIComponent(lastName) +
-  "&email=" +
-  encodeURIComponent(email) +
-  "&password=" +
-  encodeURIComponent(password) +
-  "&confirmPassword=" +
-  encodeURIComponent(confrimPassword) +
-  "&sex=" +
-  encodeURIComponent(sex) +
-  "&place_birth=" +
-  encodeURIComponent(place_birth) +
-  "&country=" +
-  encodeURIComponent(country) +
-  "&birthday=" +
-  encodeURIComponent(birthday) +
-  "&jmbg=" +
-  encodeURIComponent(jmbg) +
-  "&phone=" +
-  encodeURIComponent(phone) +
-  "&img=" +
-  encodeURIComponent(img) +
-  "&user_type=" +
-  encodeURIComponent(user_type);
-xhr.send(data);
- } else {
-  alert("Lozinka mora poceti sa velikim slovom i sadrzati barem jedan broj i spec karakter. Takodje lozinka se mora poklapati sa unetom potvrdjenom lozinkom!!")
- }
+  let pattern =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])([A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,})$/;
 
-  
-  
+  if (pattern.test(password) && password === confrimPassword) {
+    const data =
+      "username=" +
+      encodeURIComponent(username) +
+      "&lastName=" +
+      encodeURIComponent(lastName) +
+      "&email=" +
+      encodeURIComponent(email) +
+      "&password=" +
+      encodeURIComponent(password) +
+      "&confirmPassword=" +
+      encodeURIComponent(confrimPassword) +
+      "&sex=" +
+      encodeURIComponent(sex) +
+      "&place_birth=" +
+      encodeURIComponent(place_birth) +
+      "&country=" +
+      encodeURIComponent(country) +
+      "&birthday=" +
+      encodeURIComponent(birthday) +
+      "&jmbg=" +
+      encodeURIComponent(jmbg) +
+      "&phone=" +
+      encodeURIComponent(phone) +
+      "&img=" +
+      encodeURIComponent(img) +
+      "&user_type=" +
+      encodeURIComponent(user_type);
+    xhr.send(data);
+  } else {
+    alert(
+      "Lozinka mora poceti sa velikim slovom i sadrzati barem jedan broj i spec karakter. Takodje lozinka se mora poklapati sa unetom potvrdjenom lozinkom!!"
+    );
+  }
 };
