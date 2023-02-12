@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../supplementsPage/supplements.css">
+    <title>Equipment</title>
+  </head>
+  <body>
+    <header>
+        <nav class="header-nav">
+          <div class="header-logo">
+            <a href="../homePage/homePage.html"><img src="https://thumbs.dreamstime.com/b/e-commerce-business-fitness-dumbbell-icon-vector-logo-design-216617361.jpg"
+                alt="logo"></a>
+          </div>
+          <div class="header-user-info">
+            <img src="https://thumbs.dreamstime.com/b/businessman-icon-vecto-vector-male-avatar-profile-image-182095609.jpg" alt="user image">
+            <span id="header-user-name"></span>
+          </div>
+          <ul class="header-menu">
+            <li><a href="../supplementsPage/supplements.html">Supplements</a></li>
+            <li><a href="../clothesPage/clothes.html">Clothes</a></li>
+            <li><a id="prodavac"></a></li>
+            
+          </ul>
+          <div class="header-cart">
+            <a href="#">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </div>   
+        </nav>
+    </header>
+
+
+    <div class="filter-container">
+      <h2>Filter By:</h2>
+      <div class="filters">
+          <form>
+            <label for="type-select">Type:</label>
+            <select id="type-select">
+              <option value="">All</option>
+              <option value="type1">Type 1</option>
+              <option value="type2">Type 2</option>
+              <option value="type3">Type 3</option>
+            </select>
+            <label for="price-select">Price:</label>
+            <select id="price-select">
+              <option value="">All</option>
+              <option value="price1">Price 1</option>
+              <option value="price2">Price 2</option>
+              <option value="price3">Price 3</option>
+            </select>
+            <label for="gender-select">Gender:</label>
+            <select id="gender-select">
+              <option value="">All</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </form>
+
+      </div>
+      
+
+    </div>
+    <div id="product-container" class="product-list">
+      
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <p>Copyright &copy; 2022 Fitness Gear</p>
+          <p>All rights reserved</p>
+        </div>
+      </footer>
+
+      <script src="./equipment.js"></script>
+  </body>
+</html>
