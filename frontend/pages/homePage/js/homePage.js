@@ -1,4 +1,4 @@
-import { fatchHomePageData } from "http://localhost/Web%20Programiranje/frontend/pages/homePage/js/fatchHomePageData.js";
+import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
 
 const clothesContainer = document.getElementById("products-cont");
 console.log(clothesContainer);

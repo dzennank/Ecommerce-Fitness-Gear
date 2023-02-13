@@ -1,11 +1,11 @@
-
+// import {  } from "../../../../backend/api/";
 export const fatchHomePageData = () => {
   const promises = [];
 
   const getSupp = new XMLHttpRequest();
   getSupp.open(
     "GET",
-    "http://localhost/Web%20Programiranje/backend/api/supplements_controller.php",
+    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/suppBestSeller_controller.php",
     true
   );
   promises.push(
@@ -26,7 +26,7 @@ export const fatchHomePageData = () => {
   const getClothes = new XMLHttpRequest();
   getClothes.open(
     "GET",
-    "http://localhost/Web%20Programiranje/backend/api/clothes_controller.php",
+    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/clothesBestSeller_controller.php",
     true
   );
   promises.push(
@@ -48,7 +48,7 @@ export const fatchHomePageData = () => {
   const getEquip = new XMLHttpRequest();
   getEquip.open(
     "GET",
-    "http://localhost/Web%20Programiranje/backend/api/equipment_controller.php",
+    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/equipBestSeller_controller.php",
     true
   );
   promises.push(
