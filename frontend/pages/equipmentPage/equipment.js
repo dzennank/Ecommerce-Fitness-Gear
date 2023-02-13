@@ -47,3 +47,4 @@ fetchSupplements().then(data => {
         product.appendChild(neto);
     });
 });
+
