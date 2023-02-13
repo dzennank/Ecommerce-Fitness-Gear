@@ -2,7 +2,7 @@
 
 class FetchVendorProductsController {
     public function fetchVendorProducts() {
-        $email = 'dzenankrlic@gmail.com';
+        $email = $_POST["email"];
 
         include("../dbcon.php");
 

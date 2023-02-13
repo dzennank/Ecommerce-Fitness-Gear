@@ -7,8 +7,7 @@
     
     const userInfo = document.getElementById("header-user-name");
     userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
-    console.log(user.email)
-
+    
 
 
 fetch("../../../backend/api/vendorProducts_controller.php", {
@@ -17,6 +16,7 @@ fetch("../../../backend/api/vendorProducts_controller.php", {
       "Content-Type": "application/x-www-form-urlencoded"
     },
     body: `email=${user.email}`
+    
   })
     .then(response => response.json())
     .then(data => {
