@@ -1,3 +1,4 @@
+
 const handleOnChange = () => {
     const selectedType = document.getElementById("select-type")
     const selectedTypeValue = selectedType.value;
@@ -5,14 +6,16 @@ const handleOnChange = () => {
     console.log(selectedTypeValue)
     const form = document.getElementById("product-form");
     const container = document.getElementById("container");
-    container.innerHTML = "";
+    container.innerHTML = ""
     console.log(form)
     if(selectedTypeValue === "clothes") {
         
         //creating gender select
         const genderLabel = document.createElement('label');
         genderLabel.textContent = "Gender";
+
         const gender = document.createElement('select');
+        gender.id = "select-gender"
         const male = document.createElement('option');
         const female = document.createElement('option')
         male.textContent = "musko"
@@ -26,7 +29,7 @@ const handleOnChange = () => {
         //creating size select
         const sizeLabel = document.createElement('label');
         sizeLabel.textContent = "Size"
-        sizeLabel.id = "size-label"
+        
 
         const size = document.createElement('select');
         size.id = "clothes-size"
@@ -50,22 +53,22 @@ const handleOnChange = () => {
         size.appendChild(xl);
         size.appendChild(xxl);
 
-        const button = document.createElement('button');
-        button.type = "submit"
-        button.textContent = "Create"
-        container.appendChild(button);
+        // const button = document.createElement('button');
+        // button.type = "submit"
+        // button.textContent = "Create"
+        // button.id = "submit-button"
+        
+        // container.appendChild(button);
+        
     } 
 
     if(selectedTypeValue === "supplements") {
-        const itemToRemove = document.getElementById("size-label");
-        if(itemToRemove) {
-
-            itemToRemove.remove();
-        }
+        
         //creating gender select
         const typeLabel = document.createElement('label');
         typeLabel.textContent = "Type Of Supplement";
         const type = document.createElement('select');
+        type.id = "supp-type";
         const protein = document.createElement('option');
         const creatine = document.createElement('option')
         selectTypeOption = document.createElement('option');
@@ -85,6 +88,7 @@ const handleOnChange = () => {
         weightLabel.textContent = "Weight"
 
         const size = document.createElement('select');
+        size.id = "weight";
         const s = document.createElement('option');
         const m = document.createElement('option');
         const l = document.createElement('option');
@@ -105,10 +109,11 @@ const handleOnChange = () => {
         size.appendChild(xl);
         size.appendChild(xxl);
 
-        const button = document.createElement('button');
-        button.type = "submit"
-        button.textContent = "Create"
-        container.appendChild(button);
+        const suppType = document.getElementById("supp-type").value;
+        const weight = document.getElementById("weight").value;
+        console.log(suppType, weight)
+
+        
     }
 
     if(selectedTypeValue === "equipment") {
@@ -117,13 +122,64 @@ const handleOnChange = () => {
 
         const input = document.createElement('input')
         input.type = "text";
+        input.id = "equip-type";
 
         container.appendChild(typeLabel);
         container.appendChild(input);
 
-        const button = document.createElement('button');
-        button.type = "submit"
-        button.textContent = "Create"
-        container.appendChild(button);
+        
     }
 }
+
+const user = JSON.parse(localStorage.getItem("user"));
+const email = user.email
+
+
+const handleClick = () => {
+    console.log("first")
+    const selectedType = document.getElementById("select-type")
+    const selectedTypeValue = selectedType.value;
+    const name = document.getElementById("name").value
+    const image = document.getElementById("image").value
+    const price = document.getElementById("price").value
+    const desc = document.getElementById("description").value
+
+    let bodyHandle = ""
+    if(selectedTypeValue === "clothes") {
+        const selectedGender = document.getElementById("select-gender").value;
+        console.log(selectedGender)
+        const selectedSize = document.getElementById("clothes-size").value;
+        bodyHandle = `email=${email}&selectedTypeValue=${selectedTypeValue}&name=${name}&image=${image}&prie=${price}&desc=${desc}&selectedGender=${selectedGender}&selectedSize=${selectedSize}`;
+    } else if (selectedTypeValue === "supplements") {
+        const suppType = document.getElementById("supp-type").value;
+        const weight = document.getElementById("weight").value;
+        console.log(suppType, weight)
+        bodyHandle = `email=${email}&selectedTypeValue=${selectedTypeValue}&name=${name}&image=${image}&price=${price}&desc=${desc}&suppType=${suppType}&weight=${weight}`;
+    } else {
+        const equipType = document.getElementById("equip-type").value;
+        bodyHandle = `email=${email}&selectedTypeValue=${selectedTypeValue}&name=${name}&image=${image}&price=${price}&desc=${desc}&equipType=${equipType}`;
+    }
+    
+
+    fetch("../../../backend/api/createProduct_controller.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: bodyHandle
+        
+      })
+      .then(response => response.json())
+    .then(data => {
+        if(data.success === true) {
+            alert("Product succesfully created");
+        } else {
+            alert("Product is not succesfully created");
+        }
+    })
+}
+
+// document.getElementById("submit-button").addEventListener("submit", function(e){
+//     e.preventDefault
+//     handleClick();
+// })
