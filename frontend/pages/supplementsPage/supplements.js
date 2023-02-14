@@ -89,7 +89,7 @@ const handleFiltering = () => {
         name.textContent = "Name: " + prod.supplement_name;
 
         const price = document.createElement('p')
-        name.textContent = "Price: " + prod.supplement_price + "$";
+        price.textContent = "Price: " + prod.supplement_price + "$";
 
         const neto = document.createElement('p')
         neto.textContent = "Size: " + prod.supplement_weight;

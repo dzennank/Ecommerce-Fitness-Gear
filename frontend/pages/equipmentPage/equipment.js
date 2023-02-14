@@ -34,7 +34,7 @@ fetchSupplements().then(data => {
         name.textContent = "Name: " + prod.equipment_name;
 
         const price = document.createElement('p')
-        name.textContent = "Price: " + prod.equipment_price + "$";
+        price.textContent = "Price: " + prod.equipment_price + "$";
 
         const neto = document.createElement('p')
         neto.textContent = "Weight: " + prod.equipment_weight;
