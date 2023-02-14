@@ -112,7 +112,7 @@ form {
     margin-top: 0.5rem;
   }
   
-  button {
+  .container button {
     margin-bottom: 1rem;
     background-color: #EEB411;
     color: white;
@@ -122,9 +122,10 @@ form {
     font-size: 1rem;
     margin-top: 1rem;
     cursor: pointer;
+    width: 100%;
   }
   
-  button:hover {
+  .container button:hover {
     background-color: #0077a3;
   }
   
