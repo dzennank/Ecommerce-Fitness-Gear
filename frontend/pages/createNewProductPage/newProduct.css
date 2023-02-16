@@ -112,7 +112,7 @@ form {
     margin-top: 0.5rem;
   }
   
-  .container button {
+  button {
     margin-bottom: 1rem;
     background-color: #EEB411;
     color: white;
@@ -125,7 +125,7 @@ form {
     width: 100%;
   }
   
-  .container button:hover {
+  button:hover {
     background-color: #0077a3;
   }
   

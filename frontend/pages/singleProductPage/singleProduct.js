@@ -26,7 +26,10 @@ const fatchSingleProductData = () => {
 
 fatchSingleProductData()
   .then((response) => {
-    console.log(response);
+    // console.log(response)
+    // console.log(response.data);
+    localStorage.setItem("productData", JSON.stringify(response));
+    
     if (response.name === "clothes") {
       const productName = document.getElementById("productName");
       const price = document.getElementById("price");
@@ -59,3 +62,16 @@ fatchSingleProductData()
   .catch((err) => {
     console.log(err);
   });
+
+  
+let productToAdd = []
+  const addToCart = () => {
+    let cartData = JSON.parse(localStorage.getItem('productForCart')) || [];
+
+    const productData = JSON.parse(localStorage.getItem("productData"));
+    cartData.push(productData)
+    localStorage.setItem("productForCart", JSON.stringify(cartData));
+    
+  }
+  const test = JSON.parse(localStorage.getItem("productForCart"));
+  console.log(test)

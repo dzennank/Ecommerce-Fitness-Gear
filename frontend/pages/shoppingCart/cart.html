@@ -40,56 +40,20 @@
               <th>Total</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <img src="https://rs.proteini.si/image/small/10409" alt="Product 1">
-                <span>Product 1</span>
-              </td>
-              <td>$19.99</td>
-              <td>
-                <button class="quantity-btn decrease">-</button>
-                <span class="quantity">1</span>
-                <button class="quantity-btn increase">+</button>
-              </td>
-              <td>$19.99</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="https://rs.proteini.si/image/small/10409" alt="Product 2">
-                <span>Product 2</span>
-              </td>
-              <td>$24.99</td>
-              <td>
-                <button class="quantity-btn decrease">-</button>
-                <span class="quantity">2</span>
-                <button class="quantity-btn increase">+</button>
-              </td>
-              <td>$49.98</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="https://rs.proteini.si/image/small/10409" alt="Product 3">
-                <span>Product 3</span>
-              </td>
-              <td>$14.99</td>
-              <td>
-                <button class="quantity-btn decrease">-</button>
-                <span class="quantity">3</span>
-                <button class="quantity-btn increase">+</button>
-              </td>
-              <td>$44.97</td>
-            </tr>
+          <tbody id="t-body">
+            
           </tbody>
           <tfoot>
             <tr>
               <td colspan="3">Total:</td>
-              <td>$114.94</td>
+              <td id="total-to-pay"></td>
             </tr>
           </tfoot>
         </table>
         <a class="buttons" href="#">Checkout</a>
         <a class="buttons" href="#">Continue to shopping</a>
       </main>
+
+      <script src="./shoppingCart.js"></script>
   </body>
 </html>

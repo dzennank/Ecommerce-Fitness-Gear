@@ -129,7 +129,7 @@ body {
     background-color: #555;
   }
 
-  .quantity-btn {
+  .quantity-btn-decrease {
     background-color: #333;
     color: #fff;
     border: none;
@@ -141,6 +141,21 @@ body {
     margin: 0 5px;
     border-radius: 50%;
     cursor: pointer;
+    padding-right: 2px;
+  }
+  .quantity-btn-increase {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding-right: 2px;
   }
   .quantity {
     display: inline-block;
@@ -155,9 +170,7 @@ body {
   .quantity-btn:active {
     background-color: #000;
   }
-  .decrease {
-    padding-right: 2px;
-  }
+  
   .increase {
     padding-left: 2px;
   }
