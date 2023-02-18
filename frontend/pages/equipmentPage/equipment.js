@@ -26,11 +26,14 @@ fetchSupplements().then(data => {
     data.forEach(prod => {
         const product = document.createElement('div')
         product.classList.add('product')
+        product.addEventListener("click", () => {
+          location.href = "../singleProductPage/singleProduct.html?id=" + prod.equipment_id + "&name=equipment"    
+        })
 
         const image = document.createElement('img')
         image.src = prod.equipment_image
 
-        const name = document.createElement('h3');
+        const name = document.createElement('h4');
         name.textContent = "Name: " + prod.equipment_name;
 
         const price = document.createElement('p')

@@ -81,6 +81,9 @@ const handleFiltering = () => {
       
         const product = document.createElement('div')
         product.classList.add('product')
+        product.addEventListener("click", () => {
+          location.href = "../singleProductPage/singleProduct.html?id=" + prod.supplement_id + "&name=supplement"    
+        })
 
         const image = document.createElement('img')
         image.src = prod.supplement_image
@@ -93,6 +96,9 @@ const handleFiltering = () => {
 
         const neto = document.createElement('p')
         neto.textContent = "Size: " + prod.supplement_weight;
+
+        // const link = document.createElement("a");
+        // link.href = "../singleProductPage/singleProduct.html"
 
 
         productContianer.appendChild(product)

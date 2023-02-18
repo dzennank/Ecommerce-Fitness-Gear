@@ -1,4 +1,7 @@
 
+body {
+  background-color:rgb(215, 215, 215)
+}
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -35,7 +38,7 @@
   font-size: 16px;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #fff;
+  color: white;
 }
 
 .header-menu {
@@ -51,7 +54,7 @@
 
 .header-menu a {
   text-decoration: none;
-  color: #fff;
+  color: white;
   font-size: 16px;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -168,7 +171,7 @@
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: #114BEE;;
   }
   .product-hover {
     position: absolute;
@@ -207,21 +210,78 @@
   .product-hover a {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: lightblue;
+    background-color: #EEB411;;
     color: white;
     text-decoration: none;
     border-radius: 5px;
   }
   
-
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
   footer {
     background-color: #114BEE;
+    padding: 30px 0;
+  }
+  
+  footer h4 {
     color: white;
-    padding: 40px 0;
-    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
   
-  .footer-container p {
-    margin: 0;
+  footer ul li {
+    color: white;
+    margin-bottom: 10px;
   }
   
+  footer ul li i {
+    margin-right: 10px;
+  }
+  
+  footer ul li a {
+    color: white;
+  }
+  
+  footer ul li a:hover {
+    color: #EEB411;
+  }
+  
+  footer form .form-group {
+    margin-right: 10px;
+  }
+  
+  footer form .form-control {
+    width: 200px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    color: #222;
+  }
+  
+  footer form .btn-primary {
+    background-color: #222;
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    footer h4 {
+      font-size: 18px;
+    }
+    
+    footer ul li {
+      font-size: 14px;
+    }
+    
+    footer form .form-control {
+      width: 100%;
+    }
+  }
+  
+  
+ 

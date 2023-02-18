@@ -80,11 +80,14 @@ const handleFiltering = () => {
       
         const product = document.createElement('div')
         product.classList.add('product')
+        product.addEventListener("click", () => {
+          location.href = "../singleProductPage/singleProduct.html?id=" + prod.clothes_id + "&name=clothes"    
+        })
 
         const image = document.createElement('img')
         image.src = prod.clothes_image
 
-        const name = document.createElement('h4');
+        const name = document.createElement('h3');
         name.textContent = "Name: " + prod.clothes_name;
 
         const price = document.createElement('p')

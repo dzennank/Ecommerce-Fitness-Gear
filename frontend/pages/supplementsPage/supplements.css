@@ -137,16 +137,21 @@ label, select {
 .product:hover {
   transform: translateY(-10px);
   box-shadow: 0px 10px 20px grey;
+  cursor: pointer;
+  
 }
+
 
 img {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
 
-h3 {
+
+h4 {
   margin-top: 20px;
-  font-size: 24px;
+  /* font-size: 24px; */
+  color: #114BEE;
 }
 
 p {
@@ -174,15 +179,72 @@ select {
     outline: none;
   }
 
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
+
   footer {
     background-color: #114BEE;
-    color: white;
-    padding: 40px 0;
-    text-align: center;
+    padding: 30px 0;
   }
   
-  .footer-container p {
-    margin: 0;
+  footer h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  footer ul li {
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  footer ul li i {
+    margin-right: 10px;
+  }
+  
+  footer ul li a {
+    color: white;
+  }
+  
+  footer ul li a:hover {
+    color: #EEB411;
+  }
+  
+  footer form .form-group {
+    margin-right: 10px;
+  }
+  
+  footer form .form-control {
+    width: 200px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    color: #222;
+  }
+  
+  footer form .btn-primary {
+    background-color: #222;
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    footer h4 {
+      font-size: 18px;
+    }
+    
+    footer ul li {
+      font-size: 14px;
+    }
+    
+    footer form .form-control {
+      width: 100%;
+    }
   }
 
   select option {
