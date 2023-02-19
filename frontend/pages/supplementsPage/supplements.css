@@ -111,9 +111,18 @@ form {
     margin-top: 20px;
   }
 
+  .price-filter {
+    display: block;
+   
+  }
+  .do {
+    margin-top: 10px;
+  }
+
 label, select {
   font-size: 18px;
   margin-right: 20px;
+  color: #222;
 }
 
 .product-list {

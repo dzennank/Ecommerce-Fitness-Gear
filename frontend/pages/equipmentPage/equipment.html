@@ -39,9 +39,10 @@
             <label for="type-select">Type:</label>
             <select id="type-select">
               <option value="">All</option>
-              <option value="type1">Type 1</option>
-              <option value="type2">Type 2</option>
-              <option value="type3">Type 3</option>
+              <option value="rukavice">Rukavice</option>
+              <option value="kais">Kais</option>
+              <option value="shaker">Shaker</option>
+              <option value="guma">Guma</option>
             </select>
             <label for="price-select">Price:</label>
             <select id="price-select">
@@ -56,6 +57,19 @@
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            <div class="price-filter">
+              <div class="od">
+                <label>Od</label>
+                <input id="price-from" type="number">
+              </div>
+              <div class="do">
+                <label>Do</label>
+                <input id="price-to" type="number">
+              </div>
+            </div>
+            <button onclick="handleFiltering()" id="submit-filters" type="submit">
+              Submit
+            </button>
           </form>
 
       </div>

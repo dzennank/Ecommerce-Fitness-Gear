@@ -4,6 +4,7 @@ class createProductController
 {
     public function createProduct()
     {
+        require("./getUserID.php");
         include("../dbcon.php");
         $selectedTypeValue = $_POST["selectedTypeValue"];
         $name = $_POST["name"];
@@ -12,11 +13,11 @@ class createProductController
         $desc = $_POST["desc"];
         $email = $_POST["email"];
 
-        $query_id = "SELECT user_id FROM users where email = '$email'";
-        $query_id_run = mysqli_query($conn, $query_id);
+        // $query_id = "SELECT user_id FROM users where email = '$email'";
+        // $query_id_run = mysqli_query($conn, $query_id);
 
-        $userID = mysqli_fetch_row($query_id_run);;
-        $id = $userID[0];
+        // $userID = mysqli_fetch_row($query_id_run);;
+        $id = getUserID($email);
 
         if ($selectedTypeValue == "clothes") {
             $selectedGender = $_POST["selectedGender"];

@@ -1,17 +1,21 @@
 <?php
 class orderItemsController
 {
+    
     public function createOrderItems()
     {
-
+        header('Content-Type: application/json');
         $cartData = json_decode(file_get_contents('php://input'), true);
-        $quantity = $_POST['quantity'];
+        $quantity = 2;
         include("../dbcon.php");
         $order_query = "SELECT MAX(order_id) from orders";
         $order_query_run = mysqli_query($conn, $order_query);
 
-        $order_id = mysqli_fetch_row($order_query_run);
+        $order_fetch = mysqli_fetch_row($order_query_run);
+       $order_id = $order_fetch[0];
+       
 
+       $response = [];
         foreach ($cartData as $data) {
             $productName = $data['name'];
             $orderProducts = $data['data'];
@@ -37,14 +41,14 @@ class orderItemsController
                 $order_id, 
                 $id, 
                 '$productName', 
-                '$quantity'
+                $quantity
             )";
         $query_run = mysqli_query($conn, $query);
-        }
         if($query_run) {
-            $response = array('success' => true);
+            $response[] = array('success_items' => true);
         } else {
-            $response = array('success' => false);
+            $response[] = array('success_items' => false);
+        }
         }
 
         echo json_encode($response);

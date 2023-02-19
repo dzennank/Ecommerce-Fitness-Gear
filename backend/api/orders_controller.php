@@ -4,7 +4,7 @@ class createOrderController {
     public function createOrder() {
         require("./getUserID.php");
         include("../dbcon.php");
-        $email = 'dzenankrlic@gmail.com';
+        $email = $_POST['email'];
         $id = getUserID($email);
 
         $date = date('m-d-Y');
