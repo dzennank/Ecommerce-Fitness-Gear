@@ -53,14 +53,21 @@ cartData.forEach((data) => {
      
 
       const totalPriceValue = parseFloat(priceValue.replace("$", ""));
-      totalPriceToPay.push(totalPriceValue);
-      const sumToPay = totalPriceToPay.reduce((acc, curr) => acc + curr, 0);
-  const totalToPay = document.getElementById("total-to-pay");
-  totalToPay.textContent = "$" + sumToPay;
+       // calcualting total price of all products
+       const totalPriceEndValue = document.getElementById("total-to-pay");
+       const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
+       
+       const subtractedValue = totalPriceEnd + totalPriceValue;
+
+       totalPriceEndValue.textContent = "$" + subtractedValue;
+  //     totalPriceToPay.push(totalPriceValue);
+  //     const sumToPay = totalPriceToPay.reduce((acc, curr) => acc + curr, 0);
+  // const totalToPay = document.getElementById("total-to-pay");
+  // totalToPay.textContent = "$" + sumToPay;
       let totalPrice = totalPriceElementValueWithoutDollar;
       //  totalPrice += totalPriceValue;
       const totalValueEnd = totalPrice + totalPriceValue;
-      console.log(totalValueEnd);
+      console.log("value",totalValueEnd);
       totalPriceElement.textContent = "$" + totalValueEnd;
 
       //Handle Button Value Here
@@ -90,6 +97,14 @@ cartData.forEach((data) => {
         const totalValueEnd = totalPrice - totalPriceValue;
         console.log(totalValueEnd);
         totalPriceElement.textContent = "$" + totalValueEnd;
+
+        // calcualting total price of all products
+        const totalPriceEndValue = document.getElementById("total-to-pay");
+        const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
+        
+        const subtractedValue = totalPriceEnd - totalPriceValue;
+
+        totalPriceEndValue.textContent = "$" + subtractedValue;
 
         //Handle Button Value Here
 
@@ -172,11 +187,15 @@ cartData.forEach((data) => {
       );
 
       const totalPriceValue = parseFloat(priceValue.replace("$", ""));
+      // calcualting total price of all products
+      const totalPriceEndValue = document.getElementById("total-to-pay");
+      const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
       
-      totalPriceToPay.push(totalPriceValue);
-      const sumToPay = totalPriceToPay.reduce((acc, curr) => acc + curr, 0);
-  const totalToPay = document.getElementById("total-to-pay");
-  totalToPay.textContent = "$" + sumToPay;
+      const subtractedValue = totalPriceEnd + totalPriceValue;
+
+      totalPriceEndValue.textContent = "$" + subtractedValue;
+      
+     
       let totalPrice = totalPriceElementValueWithoutDollar;
       //  totalPrice += totalPriceValue;
       const totalValueEnd = totalPrice + totalPriceValue;
@@ -211,6 +230,13 @@ cartData.forEach((data) => {
         console.log(totalValueEnd);
         totalPriceElement.textContent = "$" + totalValueEnd;
 
+       // calcualting total price of all products
+       const totalPriceEndValue = document.getElementById("total-to-pay");
+       const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
+       
+       const subtractedValue = totalPriceEnd - totalPriceValue;
+
+       totalPriceEndValue.textContent = "$" + subtractedValue;
         //Handle Button Value Here
 
         const quantityValue = buttonNumber - 1;
@@ -286,12 +312,16 @@ cartData.forEach((data) => {
       );
 
       const totalPriceValue = parseFloat(priceValue.replace("$", ""));
+      // calcualting total price of all products
+      const totalPriceEndValue = document.getElementById("total-to-pay");
+      const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
+      
+      const subtractedValue = totalPriceEnd + totalPriceValue;
+
+      totalPriceEndValue.textContent = "$" + subtractedValue;
       let totalPrice = totalPriceElementValueWithoutDollar;
       //  totalPrice += totalPriceValue;
-      totalPriceToPay.push(totalPriceValue);
-      const sumToPay = totalPriceToPay.reduce((acc, curr) => acc + curr, 0);
-  const totalToPay = document.getElementById("total-to-pay");
-  totalToPay.textContent = "$" + sumToPay;
+      
       const totalValueEnd = totalPrice + totalPriceValue;
       console.log(totalValueEnd);
       totalPriceElement.textContent = "$" + totalValueEnd;
@@ -323,6 +353,14 @@ cartData.forEach((data) => {
         const totalValueEnd = totalPrice - totalPriceValue;
         console.log(totalValueEnd);
         totalPriceElement.textContent = "$" + totalValueEnd;
+
+         // calcualting total price of all products
+         const totalPriceEndValue = document.getElementById("total-to-pay");
+         const totalPriceEnd = parseFloat(totalPriceEndValue.textContent.replace("$", ""))
+         
+         const subtractedValue = totalPriceEnd - totalPriceValue;
+ 
+         totalPriceEndValue.textContent = "$" + subtractedValue;
 
         //Handle Button Value Here
 
