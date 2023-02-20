@@ -34,7 +34,7 @@ input[type="month"] {
 	border-radius: 5px;
 	font-size: 1rem;
 }
-input[type="submit"] {
+input[type="button"] {
 	display: block;
 	margin-top: 1rem;
 	background-color: #EEB411;
@@ -45,6 +45,6 @@ input[type="submit"] {
 	font-size: 1rem;
 	cursor: pointer;
 }
-input[type="submit"]:hover {
+input[type="button"]:hover {
 	background-color: #114BEE;
 }

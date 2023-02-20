@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./singleProduct.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     </head>
     <body>
         <header>
@@ -22,7 +23,7 @@
                 
               </ul>
               <div class="header-cart">
-                <a href="#">
+                <a href="../shoppingCart/cart.html">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
               </div>   
@@ -41,6 +42,9 @@
               </div>
               <p id="desc" class="product-description">Product description goes here...</p>
               <button onclick="addToCart()" class="add-to-cart-button">Add to Cart</button>
+              <div id="confirmation-message">
+                <span>Item successfully added to cart!</span>
+              </div>
             </div>
           </div>
 

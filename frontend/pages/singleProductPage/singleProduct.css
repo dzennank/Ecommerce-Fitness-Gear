@@ -144,6 +144,45 @@
   background-color: #005cbf;
 }
 
+#confirmation-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #EEB411;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  opacity: 0;
+  animation: fade-in-out 2s ease;
+}
+
+#confirmation-message.show {
+  display: block;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+}
+
 footer {
     background-color: #114BEE;
     color: white;
