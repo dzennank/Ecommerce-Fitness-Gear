@@ -20,6 +20,13 @@ class clothesFiltering
       // $priceRange = explode('-', $selectedPrice);
       $conditions[] = "equipment_price >= '$priceFrom' AND equipment_price <= '$priceTo'";
     }
+    if($priceFrom && !$priceTo)  {
+      $conditions[] = "equipment_price >='$priceFrom'";
+    }
+
+    if(!$priceFrom && $priceTo) {
+      $conditions[] = "equipment_price <= '$priceTo'";
+    }
     // if($selectedGender){
     //   $conditions[] = "clothes_gender = '$selectedGender'";
     // }

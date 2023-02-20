@@ -1,34 +1,40 @@
 <?php
 
 
-class SupplementFiltering{
+class SupplementFiltering
+{
   public function GetDataForFiltering()
   {
     $selectedType = $_POST["selectedType"];
     $priceFrom = $_POST["priceFrom"];
-    $priceTo= $_POST["priceTo"];
+    $priceTo = $_POST["priceTo"];
     $selectedWeight = $_POST["selectedWeight"];
 
     include("../dbcon.php");
-   
+
     $query = "SELECT * FROM supplements";
     $conditions = [];
 
-    if($selectedType) {
-      
+    if ($selectedType) {
+
       $conditions[] = "supplement_type = '$selectedType'";
     }
-    if($priceFrom && $priceTo){
+    if ($priceFrom && $priceTo) {
       $conditions[] = "supplement_price >= '$priceFrom' AND supplement_price <= '$priceTo'";
     }
-    if($selectedWeight){
+    if ($priceFrom && !$priceTo) {
+      $conditions[] = "supplement_price >='$priceFrom'";
+    }
+
+    if (!$priceFrom && $priceTo) {
+      $conditions[] = "supplement_price <= '$priceTo'";
+    }
+    if ($selectedWeight) {
       $conditions[] = "supplement_weight = '$selectedWeight'";
     }
 
     if (count($conditions) > 0) {
       $query .= " WHERE " . implode(" AND ", $conditions);
-      
-      
     }
     $query_run = mysqli_query($conn, $query);
 
@@ -48,4 +54,4 @@ class SupplementFiltering{
 }
 
 $supp_controler = new SupplementFiltering();
-$supp_controler -> GetDataForFiltering();
+$supp_controler->GetDataForFiltering();
