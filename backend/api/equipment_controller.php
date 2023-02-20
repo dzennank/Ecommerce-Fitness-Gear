@@ -10,20 +10,19 @@ class clothesFiltering
     $priceTo= $_POST["priceTo"];
 
    
-    $query = "SELECT * FROM clothes";
+    $query = "SELECT * FROM equipment";
     $conditions = [];
 
-    if($selectedSize) {
-      
-      $conditions[] = "size = '$selectedSize'";
+    if($selectedType) {
+      $conditions[] = "equipment_type = '$selectedType'";
     }
-    if($selectedPrice){
-      $priceRange = explode('-', $selectedPrice);
-      $conditions[] = "clothes_price >= '$priceRange[0]' AND clothes_price <= '$priceRange[1]'";
+    if($priceFrom && $priceTo){
+      // $priceRange = explode('-', $selectedPrice);
+      $conditions[] = "equipment_price >= '$priceFrom' AND equipment_price <= '$priceTo'";
     }
-    if($selectedGender){
-      $conditions[] = "clothes_gender = '$selectedGender'";
-    }
+    // if($selectedGender){
+    //   $conditions[] = "clothes_gender = '$selectedGender'";
+    // }
 
     if (count($conditions) > 0) {
       $query .= " WHERE " . implode(" AND ", $conditions);

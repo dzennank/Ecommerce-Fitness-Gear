@@ -150,6 +150,23 @@ label, select {
   
 }
 
+button {
+  /* display: block; */
+	/* margin-top: 1rem; */
+  margin-left: 4rem;
+	background-color: #EEB411;
+	color: white;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #114BEE;
+}
 
 img {
   width: 100%;
