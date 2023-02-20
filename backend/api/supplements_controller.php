@@ -5,7 +5,8 @@ class SupplementFiltering{
   public function GetDataForFiltering()
   {
     $selectedType = $_POST["selectedType"];
-    $selectedPrice = $_POST["selectedPrice"];
+    $priceFrom = $_POST["priceFrom"];
+    $priceTo= $_POST["priceTo"];
     $selectedWeight = $_POST["selectedWeight"];
 
     include("../dbcon.php");
@@ -17,9 +18,8 @@ class SupplementFiltering{
       
       $conditions[] = "supplement_type = '$selectedType'";
     }
-    if($selectedPrice){
-      $priceRange = explode('-', $selectedPrice);
-      $conditions[] = "supplement_price >= '$priceRange[0]' AND supplement_price <= '$priceRange[1]'";
+    if($priceFrom && $priceTo){
+      $conditions[] = "supplement_price >= '$priceFrom' AND supplement_price <= '$priceTo'";
     }
     if($selectedWeight){
       $conditions[] = "supplement_weight = '$selectedWeight'";

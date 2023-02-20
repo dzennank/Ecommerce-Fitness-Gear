@@ -49,14 +49,19 @@
 // });
 
 const sizeSelectElement = document.querySelector("#type-select");
-  const priceSelectElement = document.querySelector("#price-select");
+  // const priceSelectElement = document.querySelector("#price-select");
   const genderSelectElement = document.querySelector("#gender-select");
+  const selectedPriceFrom = document.getElementById("price-from");
+    const selectedPriceTo = document.getElementById("price-to");
+  
 const handleFiltering = () => {
   
 
   const selectedType = sizeSelectElement.value;
-  const selectedPrice = priceSelectElement.value;
+  // const selectedPrice = priceSelectElement.value;
   const selectedWeight = genderSelectElement.value;
+  const priceFrom = selectedPriceFrom.value;
+  const priceTo = selectedPriceTo.value;
   // console.log(selectedType)
   // console.log(selectedPrice)
   // console.log(selectedGender)
@@ -66,7 +71,7 @@ const handleFiltering = () => {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: `selectedType=${selectedType}&selectedPrice=${selectedPrice}&selectedWeight=${selectedWeight}`
+    body: `selectedType=${selectedType}&priceFrom=${priceFrom}&priceTo=${priceTo}&selectedWeight=${selectedWeight}`
   })
     .then(response => response.json())
     .then(data => { 
@@ -119,5 +124,5 @@ const handleFiltering = () => {
 }
 handleFiltering();
 sizeSelectElement.addEventListener("change", handleFiltering);
-priceSelectElement.addEventListener("change", handleFiltering);
+// priceSelectElement.addEventListener("change", handleFiltering);
 genderSelectElement.addEventListener("change", handleFiltering);
