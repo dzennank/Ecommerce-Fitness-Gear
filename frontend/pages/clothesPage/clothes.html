@@ -43,19 +43,32 @@
               <option value="L">L</option>
               <option value="XL">XL</option>
             </select>
-            <label for="price-select">Price:</label>
-            <select id="price-select">
+            <!-- <select id="price-select">
               <option value="">All</option>
               <option value="0-20">0-20$</option>
               <option value="20-40">20-40$</option>
               <option value="40-60">40-60$</option>
-            </select>
+            </select> -->
             <label for="gender-select">Gender:</label>
             <select id="gender-select">
               <option value="">All</option>
               <option value="musko">Male</option>
               <option value="zensko">Female</option>
             </select>
+            <label for="price-select">Price:</label>
+            <div class="price-filter">
+              <div class="od">
+                <label>Od</label>
+                <input id="price-from" type="number">
+              </div>
+              <div class="do">
+                <label>Do</label>
+                <input id="price-to" type="number">
+              </div>
+            </div>
+            <button onclick="handleFiltering()" id="submit-filters" type="button">
+              Submit
+            </button>
           </form>
 
       </div>

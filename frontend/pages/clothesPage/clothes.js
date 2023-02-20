@@ -1,23 +1,24 @@
 
 const sizeSelectElement = document.querySelector("#type-select");
-  const priceSelectElement = document.querySelector("#price-select");
+const selectedPriceFrom = document.getElementById("price-from");
+const selectedPriceTo = document.getElementById("price-to");
   const genderSelectElement = document.querySelector("#gender-select");
 const handleFiltering = () => {
   
 
   const selectedSize = sizeSelectElement.value;
-  const selectedPrice = priceSelectElement.value;
+  const priceFrom = selectedPriceFrom.value;
+  const priceTo = selectedPriceTo.value;
+  
   const selectedGender = genderSelectElement.value;
-  console.log(selectedSize)
-  console.log(selectedPrice)
-  console.log(selectedGender)
+ 
 
   fetch("../../../backend/api/clothes_controller.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: `selectedSize=${selectedSize}&selectedPrice=${selectedPrice}&selectedGender=${selectedGender}`
+    body: `selectedSize=${selectedSize}&priceFrom=${priceFrom}&priceTo=${priceTo}&selectedGender=${selectedGender}`
   })
     .then(response => response.json())
     .then(data => { 
@@ -66,5 +67,4 @@ const handleFiltering = () => {
 }
 handleFiltering();
 sizeSelectElement.addEventListener("change", handleFiltering);
-priceSelectElement.addEventListener("change", handleFiltering);
 genderSelectElement.addEventListener("change", handleFiltering);

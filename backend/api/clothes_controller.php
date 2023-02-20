@@ -7,7 +7,8 @@ class clothesFiltering
     include("../dbcon.php");
 
     $selectedSize = $_POST["selectedSize"];
-    $selectedPrice = $_POST["selectedPrice"];
+    $priceFrom = $_POST["priceFrom"];
+    $priceTo= $_POST["priceTo"];
     $selectedGender = $_POST["selectedGender"];
 
    
@@ -18,9 +19,15 @@ class clothesFiltering
       
       $conditions[] = "size = '$selectedSize'";
     }
-    if($selectedPrice){
-      $priceRange = explode('-', $selectedPrice);
-      $conditions[] = "clothes_price >= '$priceRange[0]' AND clothes_price <= '$priceRange[1]'";
+    if($priceFrom && $priceTo){
+      $conditions[] = "clothes_price >= '$priceFrom' AND clothes_price <= '$priceTo'";
+    }
+    if($priceFrom && !$priceTo)  {
+      $conditions[] = "clothes_price >='$priceFrom'";
+    }
+
+    if(!$priceFrom && $priceTo) {
+      $conditions[] = "clothes_price <= '$priceTo'";
     }
     if($selectedGender){
       $conditions[] = "clothes_gender = '$selectedGender'";

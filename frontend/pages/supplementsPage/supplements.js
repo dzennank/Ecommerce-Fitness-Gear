@@ -58,13 +58,10 @@ const handleFiltering = () => {
   
 
   const selectedType = sizeSelectElement.value;
-  // const selectedPrice = priceSelectElement.value;
   const selectedWeight = genderSelectElement.value;
   const priceFrom = selectedPriceFrom.value;
   const priceTo = selectedPriceTo.value;
-  // console.log(selectedType)
-  // console.log(selectedPrice)
-  // console.log(selectedGender)
+
 
   fetch("../../../backend/api/supplements_controller.php", {
     method: "POST",
