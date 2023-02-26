@@ -51,6 +51,12 @@
 //     });
 // });
 
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+
+//inesrting name of logined user
+const userInfo = document.getElementById("header-user-name");
+userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
 const selectedType= document.querySelector("#type-select");
   // const priceSelectElement = document.querySelector("#price-select");
   // const genderSelectElement = document.querySelector("#gender-select");

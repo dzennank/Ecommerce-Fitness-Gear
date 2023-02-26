@@ -48,6 +48,14 @@
 //     });
 // });
 
+//checking user in local storage
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+
+//inesrting name of logined user
+const userInfo = document.getElementById("header-user-name");
+userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
+
 const sizeSelectElement = document.querySelector("#type-select");
   // const priceSelectElement = document.querySelector("#price-select");
   const genderSelectElement = document.querySelector("#gender-select");
@@ -123,3 +131,5 @@ handleFiltering();
 sizeSelectElement.addEventListener("change", handleFiltering);
 // priceSelectElement.addEventListener("change", handleFiltering);
 genderSelectElement.addEventListener("change", handleFiltering);
+
+
