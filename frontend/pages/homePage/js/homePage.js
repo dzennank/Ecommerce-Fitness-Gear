@@ -1,5 +1,5 @@
 import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
-
+import { handleLogOut } from "../../logOut/handleLogOut.js";
 const clothesContainer = document.getElementById("products-cont");
 console.log(clothesContainer);
 
@@ -146,3 +146,7 @@ if (user.tip === "Kupac") {
   myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
 
 }
+
+//handle logout btn
+const lgnButton = document.getElementById("log-out");
+handleLogOut(lgnButton);

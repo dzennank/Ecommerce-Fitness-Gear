@@ -19,7 +19,7 @@ const sendLoginData = () => {
     if (response.success) {
       localStorage.setItem("user", JSON.stringify(response));
       const user = JSON.parse(localStorage.getItem("user"));
-      // console.log(user)
+      console.log(user)
       location.href = "../homePage/homePage.html";
     } else {
       alert("Error");
@@ -34,3 +34,6 @@ const sendLoginData = () => {
   xhr.send(data);
   console.log(data);
 };
+
+const user = JSON.parse(localStorage.getItem("user"));
+      console.log("KORISNIK", user)
