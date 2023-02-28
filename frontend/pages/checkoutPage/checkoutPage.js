@@ -1,3 +1,8 @@
+import { checkUser } from "../../getUser.js";
+
+
+checkUser()
+
 const handleOrderButton = () => {
     const cartData = JSON.parse(localStorage.getItem("productForCart"));
     console.log(cartData)

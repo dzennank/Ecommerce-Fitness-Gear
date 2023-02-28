@@ -1,5 +1,8 @@
 //acess to user
+import { checkUser } from "../../getUser.js";
 
+
+checkUser()
 
 
     const user = JSON.parse(localStorage.getItem("user"));

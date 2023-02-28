@@ -7,9 +7,10 @@ const myProducts = document.getElementById("prodavac");
 
 getUser().then(user => {
   console.log(user)
-  if(user) {
+  if(user.succes) {
     userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
     if (user.role === "Kupac") {
+
       myProducts.innerHTML = "My Products";
       myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
     

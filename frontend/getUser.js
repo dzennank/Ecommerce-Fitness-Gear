@@ -11,3 +11,21 @@ export const getUser = () => {
         
         
 }
+
+export const checkUser= () => {
+  const userInfo = document.getElementById("header-user-name");
+const myProducts = document.getElementById("prodavac");
+getUser().then(user => {
+  if(user.success) {
+    userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
+    if (user.role === "Kupac") {
+      myProducts.innerHTML = "My Products";
+      myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
+    
+    }
+  } else {
+    alert("Please login to acess to this page")
+    location.href = "../login/login.html";
+  }
+})
+}

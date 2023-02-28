@@ -1,9 +1,6 @@
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
+import { checkUser } from "../../getUser.js";
 
-//inesrting name of logined user
-const userInfo = document.getElementById("header-user-name");
-userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
+checkUser();
 
 const sizeSelectElement = document.querySelector("#type-select");
 const selectedPriceFrom = document.getElementById("price-from");

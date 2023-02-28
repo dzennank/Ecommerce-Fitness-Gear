@@ -1,12 +1,9 @@
 import { handleLogOut } from "../logOut/handleLogOut.js";
+import { checkUser } from "../../getUser.js";
 
-//checking user in local storage
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
 
-//inesrting name of logined user
-const userInfo = document.getElementById("header-user-name");
-userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
+checkUser() //Checking if user is loged in or not
+
 
 const sizeSelectElement = document.querySelector("#type-select");
   // const priceSelectElement = document.querySelector("#price-select");

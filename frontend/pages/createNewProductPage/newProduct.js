@@ -1,4 +1,7 @@
+import { checkUser } from "../../getUser.js";
 
+
+checkUser()
 const handleOnChange = () => {
     const selectedType = document.getElementById("select-type")
     const selectedTypeValue = selectedType.value;

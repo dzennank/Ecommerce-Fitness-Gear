@@ -1,3 +1,7 @@
+import { checkUser } from "../../getUser.js";
+
+checkUser()
+
 const fatchSingleProductData = () => {
   return new Promise(function (resolve, reject) {
     const urlParams = new URLSearchParams(window.location.search);
