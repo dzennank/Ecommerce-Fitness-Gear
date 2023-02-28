@@ -1,8 +1,23 @@
 import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
 import { handleLogOut } from "../../logOut/handleLogOut.js";
+import { getUser } from "../../../getUser.js";
 const clothesContainer = document.getElementById("products-cont");
-console.log(clothesContainer);
+const userInfo = document.getElementById("header-user-name");
+const myProducts = document.getElementById("prodavac");
 
+getUser().then(user => {
+  console.log(user)
+  if(user) {
+    userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
+    if (user.role === "Kupac") {
+      myProducts.innerHTML = "My Products";
+      myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
+    
+    }
+  } else {
+    userInfo.innerHTML = "Guest"
+  }
+})
 fatchHomePageData().then(([supp, clothes, equip]) => {
   console.log("SUPLEMENTI: ", supp);
   console.log("OPREMA: ", equip);
@@ -136,16 +151,9 @@ const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 
 //inesrting name of logined user
-const userInfo = document.getElementById("header-user-name");
-userInfo.innerHTML = `${user.ime}  ${user.prezime}`;
 
-if (user.tip === "Kupac") {
 
-  const myProducts = document.getElementById("prodavac");
-  myProducts.innerHTML = "My Products";
-  myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
 
-}
 
 //handle logout btn
 const lgnButton = document.getElementById("log-out");
