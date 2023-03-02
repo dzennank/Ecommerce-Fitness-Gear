@@ -69,8 +69,11 @@ fatchSingleProductData()
 
   
 let productToAdd = []
-  const addToCart = () => {
-    const confirmationMessage = document.getElementById('confirmation-message');
+const button = document.getElementById('addToCart');
+console.log("adadsa",button)
+button.addEventListener("click", function() {
+  console.log("first");
+  const confirmationMessage = document.getElementById('confirmation-message');
     let cartData = JSON.parse(localStorage.getItem('productForCart')) || [];
 
     const productData = JSON.parse(localStorage.getItem("productData"));
@@ -82,7 +85,23 @@ let productToAdd = []
      setTimeout(function() {
       confirmationMessage.classList.remove('show');
     }, 2000);
+})
+
+  // const addToCart = () => {
+  //   const confirmationMessage = document.getElementById('confirmation-message');
+  //   let cartData = JSON.parse(localStorage.getItem('productForCart')) || [];
+
+  //   const productData = JSON.parse(localStorage.getItem("productData"));
+  //   cartData.push(productData)
+  //   localStorage.setItem("productForCart", JSON.stringify(cartData));
     
-  }
+  //    // Show confirmation message
+  //    confirmationMessage.classList.add('show');
+  //    setTimeout(function() {
+  //     confirmationMessage.classList.remove('show');
+  //   }, 2000);
+    
+  // }
+
   const test = JSON.parse(localStorage.getItem("productForCart"));
   console.log(test)
