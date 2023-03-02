@@ -7,7 +7,8 @@ const myProducts = document.getElementById("prodavac");
 
 getUser().then(user => {
   console.log(user)
-  if(user.succes) {
+  if(user.success) {
+    console.log(user.firstName)
     userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
     if (user.role === "Kupac") {
 
