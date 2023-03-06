@@ -15,6 +15,9 @@ getUser().then(user => {
       myProducts.innerHTML = "My Products";
       myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
     
+    } else if (user.role === "Admin") {
+      myProducts.innerHTML = "Dashboard";
+      myProducts.href = "../../admin/dashboardPage/dashboard/index.html"
     }
   } else {
     userInfo.innerHTML = "Guest"
