@@ -12,6 +12,7 @@ export const getUser = () => {
         
 }
 
+//Checking which user is loged in
 export const checkUser= () => {
   const userInfo = document.getElementById("header-user-name");
 const myProducts = document.getElementById("prodavac");
