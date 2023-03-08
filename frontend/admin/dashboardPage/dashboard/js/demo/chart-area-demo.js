@@ -130,6 +130,7 @@ fetch(
       }
     });
     
+    window.myLineChart = myLineChart;
     
   });
 
