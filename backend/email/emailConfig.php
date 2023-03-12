@@ -10,7 +10,9 @@ require "../../PHPMailer-master/src/SMTP.php";
 
 
 //Create an instance of PHPMailer
-$mail = new PHPMailer(true);
+function sendMail($email, $username)
+{
+    $mail = new PHPMailer(true);
 
 //Set mailer to use SMTP
 $mail->isSMTP();
@@ -25,9 +27,9 @@ $mail->Port = 587;
 
 //Set email content
 $mail->setFrom('dzenankrlic@gmail.com', 'Fitness Ecommerce');
-$mail->addAddress('to@example.com', 'To Name');
-$mail->Subject = 'Email Subject';
-$mail->Body = 'Email Body';
+$mail->addAddress($email, $username);
+$mail->Subject = "Purchase confirmation";
+$mail->Body = 'THANK YOU FOR PURHCASE BRO';
 
 //Send email
 if($mail->send()) {
@@ -35,3 +37,5 @@ if($mail->send()) {
 } else {
     echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
+}
+
