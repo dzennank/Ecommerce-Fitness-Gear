@@ -21,7 +21,7 @@ $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
 $mail->Username = 'dzenankrlic@gmail.com';
-$mail->Password = 'xszqhkrgkmthjzgu';
+$mail->Password = '';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
@@ -33,9 +33,12 @@ $mail->Body = 'THANK YOU FOR PURHCASE BRO';
 
 //Send email
 if($mail->send()) {
-    echo 'Email sent successfully';
+    $response = array("sucess" => true);
+    // echo 'Email sent successfully';
 } else {
-    echo 'Email sending failed: ' . $mail->ErrorInfo;
+    $response = array("success" => false, "error" => $mail->ErrorInfo);
+    // echo 'Email sending failed: ' . $mail->ErrorInfo;
 }
+echo json_encode($response);
 }
 
