@@ -9,9 +9,12 @@ require "../../PHPMailer-master/src/PHPMailer.php";
 require "../../PHPMailer-master/src/SMTP.php";
 
 
+
 //Create an instance of PHPMailer
 function sendMail($email, $username)
 {
+    require "../email/emailTemplate.php";
+    $msg = generete_email_template();
     $mail = new PHPMailer(true);
 
 //Set mailer to use SMTP
@@ -26,10 +29,11 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
 //Set email content
+$mail->isHTML(true);
 $mail->setFrom('dzenankrlic@gmail.com', 'Fitness Ecommerce');
 $mail->addAddress($email, $username);
 $mail->Subject = "Purchase confirmation";
-$mail->Body = 'THANK YOU FOR PURHCASE BRO';
+$mail->Body = $msg;
 
 //Send email
 if($mail->send()) {
