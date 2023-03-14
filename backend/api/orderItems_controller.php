@@ -45,9 +45,9 @@ class orderItemsController
             )";
         $query_run = mysqli_query($conn, $query);
         if($query_run) {
-            $response[] = array('success_items' => true);
+            $response = array('success_items' => true);
         } else {
-            $response[] = array('success_items' => false);
+            $response = array('success_items' => false);
         }
         }
 

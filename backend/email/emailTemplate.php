@@ -1,36 +1,58 @@
 <?php 
-function generete_email_template() {
+
+function generete_email_template($username) {
+  // $totalPrice = $_POST['totalPrice'];
   include("../dbcon.php");
-    $sql = "SELECT oi.product_type, oi.quantity, 
-    CASE 
-    WHEN oi.product_type = 'supplement' THEN s.supplement_name 
-    WHEN oi.product_type = 'clothes' THEN c.clothes_name 
-    END AS product_name
-    FROM order_items oi
-    LEFT JOIN supplements s ON oi.product_id = s.supplement_id AND oi.product_type = 'supplement'
-    LEFT JOIN clothes c ON oi.product_id = c.clothes_id AND oi.product_type = 'clothes'
-    WHERE oi.order_id = (SELECT MAX(order_id) FROM orders)";
-    
-    // execute query
-    $result = mysqli_query($conn, $sql);
-    // fetch data into array
-    $data = array();
-    if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-    $data[] = $row;
-    
-    }
-    
-    }
+  $sql = "SELECT
+  oi.order_id,
+  oi.product_type,
+  oi.quantity,
+  CASE
+      WHEN oi.product_type = 'supplement' THEN s.supplement_name
+      WHEN oi.product_type = 'clothes' THEN c.clothes_name
+      WHEN oi.product_type = 'equipment' THEN e.equipment_name
+  END AS product_name,
+  CASE
+      WHEN oi.product_type = 'supplement' THEN s.supplement_price
+      WHEN oi.product_type = 'clothes' THEN c.clothes_price
+      WHEN oi.product_type = 'equipment' THEN e.equipment_price
+  END AS product_price
+ FROM
+  orders o
+  JOIN order_items oi ON o.order_id = oi.order_id
+  LEFT JOIN supplements s ON oi.product_type = 'supplement' AND oi.product_id = s.supplement_id
+  LEFT JOIN clothes c ON oi.product_type = 'clothes' AND oi.product_id = c.clothes_id
+  LEFT JOIN equipment e ON oi.product_type = 'equipment' AND oi.product_id = e.equipment_id
+ WHERE
+  o.order_id = (SELECT MAX(order_id) FROM orders)";
   
+  // execute query
+  $result = mysqli_query($conn, $sql);
+  // fetch data into array
+  $data = array();
+  if (mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+  $data[] = $row;
+  
+  }
+  
+  }
+
+  $totalPriceArr = array();
+  $totalQuantityArr = array();
     $tableRows = '';
     foreach ($data as $d) {
+      $totalPriceArr[] = $d['product_price'];
+      $totalQuantityArr[] = $d['quantity'];
       $tableRows .= '<tr>
-                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_name'] . '</td>
+                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_name'] . '$</td>
                       <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['quantity'] . '</td>
-                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">Price</td>
+                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_price'] . '$</td>
                     </tr>';
     }
+    // $totalPriceArr = array_map('intval', $totalPriceArr);
+    $totalPrice = array_sum($totalPriceArr);
+    $totalQuantity = array_sum($totalQuantityArr);
   
     // Replace the placeholders in the HTML code with the actual values
     return '<!DOCTYPE html>
@@ -46,8 +68,8 @@ function generete_email_template() {
             <h1 style="margin: 0; font-size: 24px; color: #333;">Confirmation of Purchase</h1>
           </div>
           <div style="padding: 20px;">
-            <p style="margin: 0 0 20px 0;">Dear [Customer Name],</p>
-            <p style="margin: 0 0 20px 0;">Thank you for your recent purchase on [E-commerce App Name]. We are pleased to confirm your order details below:</p>
+            <p style="margin: 0 0 20px 0;">Dear ' .$username . ',</p>
+            <p style="margin: 0 0 20px 0;">Thank you for your recent purchase on Fitness Ecommerce. We are pleased to confirm your order details below:</p>
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
               <thead>
                 <tr style="background-color: #eaeaea;">
@@ -62,13 +84,11 @@ function generete_email_template() {
               <tfoot>
                 <tr>
                   <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">Total</td>
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ccc;"></td>
-                  <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">[Total Price]</td>
+                  <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $totalQuantity . '</td>
+                  <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $totalPrice . '$</td>
                 </tr>
                 </tfoot>
         </table>
-        <p style="margin: 0 0 20px 0;">Your order will be shipped to:</p>
-        <p style="margin: 0 0 20px 0;">[Customer Address]</p>
         <p style="margin: 0 0 20px 0;">Thank you for shopping with us!</p>
       </div>';
 

@@ -73,7 +73,25 @@ button.addEventListener("click", function(){
                   })
                   .then(response => response.json())
                   .then(data => {
-                    console.log(data)
+                    console.log("first", data)
+                   console.log("OVO JE DATA SA ORDER ITEMS", data.success_items)
+                   if(data.success_items) {
+                    const email = document.getElementById("email").value
+                    const firstName = document.getElementById("first-name").value;
+                    const lastName = document.getElementById("last-name").value;
+                    const username = firstName + " " + lastName;
+                    
+                    fetch("../../../backend/api/sendMail_controller.php", {
+                                       
+                      method: "POST",
+                        headers: {
+                          "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: `email=${email}&username=${username}`
+                    }).then(response => response.json())
+                    .then(emailData => console.log("EMAIL RESPONSE = ", emailData))
+                  }
+                   
                    
                   })
             } else {
@@ -84,18 +102,5 @@ button.addEventListener("click", function(){
     // const user = JSON.parse(localStorage.getItem("user"));
     // const emailInput = document.getElementById("email");
 
-    const email = document.getElementById("email").value
-    const firstName = document.getElementById("first-name").value;
-    const lastName = document.getElementById("last-name").value;
-    const username = firstName + " " + lastName;
-    
-    fetch("../../../backend/api/sendMail_controller.php", {
-                       
-      method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `email=${email}&username=${username}`
-    }).then(response => response.json())
-    .then(emailData => console.log("EMAIL RESPONSE = ", emailData))
+
 });

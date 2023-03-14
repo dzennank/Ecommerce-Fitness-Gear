@@ -14,7 +14,7 @@ require "../../PHPMailer-master/src/SMTP.php";
 function sendMail($email, $username)
 {
     require "../email/emailTemplate.php";
-    $msg = generete_email_template();
+    $msg = generete_email_template($username);
     $mail = new PHPMailer(true);
 
 //Set mailer to use SMTP
@@ -24,7 +24,7 @@ $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
 $mail->Username = 'dzenankrlic@gmail.com';
-$mail->Password = '';
+$mail->Password = 'xszqhkrgkmthjzgu';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
