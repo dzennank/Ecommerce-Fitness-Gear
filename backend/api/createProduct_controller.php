@@ -34,7 +34,7 @@ class createProductController
         if($selectedTypeValue == "equipment") {
             $equipType = $_POST["equipType"];
             $query = "INSERT INTO equipment (equipment_name, equipment_type, equipment_price, equipment_image, equipment_desc, vendor_id) 
-            VALUES('$name', '$equipType', '$price', '$weight', '$image', '$desc', '$id')";
+            VALUES('$name', '$equipType', '$price','$image', '$desc', '$id')";
         }
         $query_run = mysqli_query($conn, $query);
         if($query_run) {

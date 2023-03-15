@@ -33,7 +33,7 @@
     <form id="product-form">
       <label for="type">Type:</label>
       <!-- <input type="text" id="type" name="type" required> -->
-      <select onchange="handleOnChange()" id="select-type">
+      <select id="select-type">
         <option hidden>Select Type of Product</option>
         <option value="clothes">Clothes</option>
         <option value="supplements">Supplements</option>
@@ -54,7 +54,7 @@
       <div id="container">
 
       </div>
-      <button onclick="handleClick()" type="submit">Create</button>
+      <button id="create-product-btn">Create</button>
     </form>
 
     <script type="module" src="./newProduct.js"></script>
