@@ -282,7 +282,7 @@ document.getElementById("create-product-btn").addEventListener('click', (event)=
             const selectedGender = document.getElementById("select-gender").value;
             console.log(selectedGender)
             const selectedSize = document.getElementById("clothes-size").value;
-            bodyHandle = `email=${user.email}&selectedTypeValue=${selectedTypeValue}&name=${name}&image=${image}&prie=${price}&desc=${desc}&selectedGender=${selectedGender}&selectedSize=${selectedSize}`;
+            bodyHandle = `email=${user.email}&selectedTypeValue=${selectedTypeValue}&name=${name}&image=${image}&price=${price}&desc=${desc}&selectedGender=${selectedGender}&selectedSize=${selectedSize}`;
         } else if (selectedTypeValue === "supplements") {
             const suppType = document.getElementById("supp-type").value;
             const weight = document.getElementById("weight").value;
