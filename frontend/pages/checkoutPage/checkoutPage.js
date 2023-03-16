@@ -1,6 +1,5 @@
 import { getUser } from "../../getUser.js";
 
-
 const button = document.getElementById("checkout-submit");
 button.addEventListener("click", function(){
 
@@ -56,7 +55,10 @@ button.addEventListener("click", function(){
                       form.reset();
                      btn.addEventListener("click", () => {
                         
+                      localStorage.removeItem("productForCart");
+
                           popup.style.display = "none";
+                          location.href = "../homePage/homePage.html";
                           
                         
                       });
