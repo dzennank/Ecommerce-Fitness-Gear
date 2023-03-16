@@ -10,7 +10,7 @@ const selectedType= document.querySelector("#type-select");
   const selectedPriceFrom = document.getElementById("price-from");
   const selectedPriceTo = document.getElementById("price-to");
 const handleFiltering = () => {
-  
+  console.log("first")
 
   const type = selectedType.value;
   const priceFrom = selectedPriceFrom.value;
@@ -71,6 +71,7 @@ const handleFiltering = () => {
     });
 }
 handleFiltering();
-// sizeSelectElement.addEventListener("change", handleFiltering);
+document.getElementById("submit-filters").addEventListener("click", handleFiltering);
+document.getElementById("type-select").addEventListener("change", handleFiltering);
 // priceSelectElement.addEventListener("change", handleFiltering);
 // genderSelectElement.addEventListener("change", handleFiltering);
