@@ -71,3 +71,6 @@ const handleFiltering = () => {
 handleFiltering();
 sizeSelectElement.addEventListener("change", handleFiltering);
 genderSelectElement.addEventListener("change", handleFiltering);
+document
+  .getElementById("submit-filters")
+  .addEventListener("click", handleFiltering);
