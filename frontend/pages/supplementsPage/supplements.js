@@ -80,7 +80,7 @@ handleFiltering();
 sizeSelectElement.addEventListener("change", handleFiltering);
 // priceSelectElement.addEventListener("change", handleFiltering);
 genderSelectElement.addEventListener("change", handleFiltering);
-
+document.getElementById("submit-filters").addEventListener("click", handleFiltering);
 
 const lgnButton = document.getElementById("log-out");
 handleLogOut(lgnButton);
