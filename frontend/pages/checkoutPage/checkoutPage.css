@@ -9,6 +9,48 @@ h1 {
 	text-align: center;
 	margin-top: 2rem;
 }
+
+.popup {
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+  }
+  
+  .popup-content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+  }
+  
+  .popup-content h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+  }
+  
+  .popup-content p {
+	font-size: 16px;
+	margin-bottom: 20px;
+  }
+
+  #pop-up-btn {
+	background-color: #EEB411;
+;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+
 form {
 	max-width: 600px;
 	margin: 0 auto;
