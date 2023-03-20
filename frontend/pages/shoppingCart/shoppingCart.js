@@ -14,7 +14,7 @@ let totalPriceToPay = [];
 cartData.forEach((data) => {
   if (data.name === "clothes") {
     const rowId = `product-row-${rowCounter}`;
-    const quantityId = `quantity-${rowCounter}`;
+    const quantityId = `${data.name}-${data.data.clothes_id}`;
     const priceId = `price-${rowCounter}`;
     const totalId = `total-price-${rowCounter}`;
     
@@ -35,7 +35,7 @@ cartData.forEach((data) => {
     const quantity = document.createElement("span");
     quantity.classList.add("quantity");
     quantity.id = quantityId;
-    quantity.textContent = 1;
+    quantity.textContent = data.data.quantity;
     const totalData = document.createElement("td");
     totalData.textContent = "$" + data.data.clothes_price;
     totalData.id = totalId;
@@ -45,7 +45,8 @@ cartData.forEach((data) => {
     plusButton.classList.add("quantity-btn-increase");
     minusButton.textContent = "-";
     plusButton.textContent = "+";
-    plusButton.addEventListener("click", () => {
+    plusButton.addEventListener("click", (elements) => {
+      console.log(elements)
       const totalPriceElement = document.getElementById(totalId);
       const price = document.getElementById(priceId);
 
@@ -77,8 +78,14 @@ cartData.forEach((data) => {
       //Handle Button Value Here
       const incButton = document.getElementById(quantityId);
       let buttonNumber = parseInt(incButton.textContent);
-      const quantityValue = buttonNumber + 1;
+      let quantityValue = 1
+       quantityValue = buttonNumber + 1;
       incButton.textContent = quantityValue;
+      
+      
+      // cartData[rowCounter]["data"][quantity] = incButton.textContent;
+      // console.log(cartData)
+      // localStorage.setItem("productForCart", JSON.stringify(cartData))
     });
 
     //HANDLE DECREASE OF QUANTITY AND PRICE
@@ -149,7 +156,7 @@ cartData.forEach((data) => {
   }
   if (data.name === "supplement") {
     const rowId = `product-row-supp${rowSuppCounter}`;
-    const quantityId = `quantity-supp${rowSuppCounter}`;
+    const quantityId = `${data.name}-${data.data.supplement_id}`;
     const priceId = `price-supp${rowSuppCounter}`;
     const totalId = `total-price-supp${rowSuppCounter}`
     const row = document.createElement("tr");
@@ -275,7 +282,7 @@ cartData.forEach((data) => {
   if (data.name === "equipment") {
     
     const rowId = `product-row-equip${rowEquipCounter}`;
-    const quantityId = `quantity-equip${rowEquipCounter}`;
+    const quantityId = `${data.name}-${data.data.equipment_id}`;
     const priceId = `price-equp${rowEquipCounter}`;
     const totalId = `total-price-equip${rowEquipCounter}`
     const row = document.createElement("tr");
@@ -407,4 +414,29 @@ console.log(sumToPay);
  
 });
 
+
+document.getElementById("checkout-btn").addEventListener("click", ()=>{
+  console.log("first")
+  cartData.forEach(el => {
+    if(el.name === "clothes") {
+
+     let quantity =  document.getElementById(`${el.name}-${el.data.clothes_id}`).textContent
+     el.data.quantity = quantity;
+     
+    }
+
+    if(el.name === "supplement") {
+      let quantity =  document.getElementById(`${el.name}-${el.data.supplement_id}`).textContent
+      el.data.quantity = quantity;
+    }
+
+    if(el.name === "equipment") {
+      let quantity =  document.getElementById(`${el.name}-${el.data.equipment_id}`).textContent
+      el.data.quantity = quantity;
+    }
+    
+  });
+  console.log(cartData)
+    localStorage.setItem("productForCart", JSON.stringify(cartData));
+})
 

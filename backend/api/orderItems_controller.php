@@ -6,7 +6,6 @@ class orderItemsController
     {
         header('Content-Type: application/json');
         $cartData = json_decode(file_get_contents('php://input'), true);
-        $quantity = 2;
         include("../dbcon.php");
         $order_query = "SELECT MAX(order_id) from orders";
         $order_query_run = mysqli_query($conn, $order_query);
@@ -19,6 +18,7 @@ class orderItemsController
         foreach ($cartData as $data) {
             $productName = $data['name'];
             $orderProducts = $data['data'];
+            $quantity = $orderProducts['quantity'];
             if ($productName == 'clothes') {
 
                 $id = $orderProducts['clothes_id'];

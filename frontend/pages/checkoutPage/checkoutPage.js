@@ -1,4 +1,6 @@
 import { getUser } from "../../getUser.js";
+const cartData = JSON.parse(localStorage.getItem("productForCart"));
+    console.log(cartData)
 
 const button = document.getElementById("checkout-submit");
 button.addEventListener("click", function(){

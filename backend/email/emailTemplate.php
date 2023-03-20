@@ -45,7 +45,7 @@ function generete_email_template($username) {
       $totalPriceArr[] = $d['product_price'];
       $totalQuantityArr[] = $d['quantity'];
       $tableRows .= '<tr>
-                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_name'] . '$</td>
+                      <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_name'] . '</td>
                       <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['quantity'] . '</td>
                       <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">' . $d['product_price'] . '$</td>
                     </tr>';

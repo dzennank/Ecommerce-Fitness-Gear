@@ -77,7 +77,19 @@ button.addEventListener("click", function() {
     let cartData = JSON.parse(localStorage.getItem('productForCart')) || [];
 
     const productData = JSON.parse(localStorage.getItem("productData"));
-    cartData.push(productData)
+
+    const elIndex = cartData.findIndex(cI => cI.data[`${productData.name}_id`] === productData.data[`${productData.name}_id`])
+
+    if (elIndex !== -1){
+      console.log("nadjeni index: ", elIndex)
+      cartData[elIndex].data.quantity += 1;
+    }
+    else{
+      productData.data.quantity = 1;
+      cartData.push(productData)
+    }
+    
+    localStorage.setItem("productData", JSON.stringify(productData));
     localStorage.setItem("productForCart", JSON.stringify(cartData));
     
      // Show confirmation message
