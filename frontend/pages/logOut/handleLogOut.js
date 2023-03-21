@@ -16,7 +16,9 @@ export const handleLogOut = (lgnButton) => {
               localStorage.clear()
               location.href = "../login/login.html"
             }
-            data.success ? localStorage.clear() : console.log("Error from response")
+            else {
+              console.log("Error from response")
+            } 
         })
             
         
