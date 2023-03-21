@@ -1,4 +1,5 @@
 import { checkUser } from "../../getUser.js";
+import { handleLogOut } from "../logOut/handleLogOut.js";
 
 checkUser();
 
@@ -74,3 +75,6 @@ genderSelectElement.addEventListener("change", handleFiltering);
 document
   .getElementById("submit-filters")
   .addEventListener("click", handleFiltering);
+
+  const lgnButton = document.getElementById("log-out");
+handleLogOut(lgnButton);

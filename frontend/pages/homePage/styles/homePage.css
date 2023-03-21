@@ -53,11 +53,16 @@ body {
 }
 
 .header-menu a {
+  cursor: pointer;
   text-decoration: none;
   color: white;
   font-size: 16px;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-menu a:hover {
+  font-size: 18px;
 }
 
 .header-cart a {
