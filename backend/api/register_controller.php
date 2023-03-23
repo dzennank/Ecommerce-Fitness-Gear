@@ -1,7 +1,7 @@
 <?php
 include("../dbcon.php");
 
-$username = $_POST["username"];
+$username = $_POST["firstName"];
 $lastName = $_POST["lastName"];
 $email = $_POST["email"];
 $password = $_POST["password"];
@@ -12,8 +12,8 @@ $country = $_POST["country"];
 $birthday = $_POST["birthday"];
 $jmbg = $_POST["jmbg"];
 $phone = $_POST["phone"];
-$img = $_POST["img"];
-$user_type = $_POST["user_type"];
+$img = "neki_url";
+$user_type = $_POST["type"];
 // Connect to database and insert new user
 
 $query = "INSERT INTO users (
