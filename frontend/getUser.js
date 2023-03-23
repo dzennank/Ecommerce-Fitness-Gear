@@ -1,5 +1,6 @@
 export const getUser = () => {
     const token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
     return fetch("../../../backend/api/tokenAuth_controller.php", {
         method: "POST",
         headers: {
