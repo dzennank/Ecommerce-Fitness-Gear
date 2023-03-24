@@ -2,14 +2,22 @@ import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-
 import { handleLogOut } from "../../logOut/handleLogOut.js";
 import { getUser } from "../../../getUser.js";
 const clothesContainer = document.getElementById("products-cont");
-const userInfo = document.getElementById("header-user-name");
+// const userInfo = document.getElementById("header-user-name");
 const myProducts = document.getElementById("prodavac");
 
 getUser().then(user => {
   console.log(user)
+  
   if(user.success) {
     console.log(user.firstName)
+    const infoCont = document.getElementById("user-info");
+    const img = document.createElement("img");
+    img.src = user.img
+    infoCont.appendChild(img);
+    const userInfo = document.createElement("span");
+    userInfo.id = "header-user-name";
     userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
+    infoCont.appendChild(userInfo);
     if (user.role === "Kupac") {
 
       myProducts.innerHTML = "My Products";

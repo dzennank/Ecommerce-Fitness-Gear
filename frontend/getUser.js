@@ -17,9 +17,16 @@ export const getUser = () => {
 export const checkUser= () => {
   const userInfo = document.getElementById("header-user-name");
 const myProducts = document.getElementById("prodavac");
+const infoCont = document.getElementById("user-info");
 getUser().then(user => {
   if(user.success) {
+    const img = document.createElement("img");
+    img.src = user.img
+    infoCont.appendChild(img);
+    const userInfo = document.createElement("span");
+    userInfo.id = "header-user-name";
     userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
+    infoCont.appendChild(userInfo);
     if (user.role === "Kupac") {
       myProducts.innerHTML = "My Products";
       myProducts.href = "../../pages/vendorProducts/vendorProducts.html";

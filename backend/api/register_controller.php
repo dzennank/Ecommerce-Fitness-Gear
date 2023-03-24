@@ -19,7 +19,7 @@ $target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
 
-  $url = "../uploads" . basename($_FILES["image"]["name"]);
+  $url = "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/uploads/" . basename($_FILES["image"]["name"]);
   $query = "INSERT INTO users (
     ime, 
     prezime,

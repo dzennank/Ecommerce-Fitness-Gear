@@ -18,7 +18,7 @@ class tokenAuthController
         $query_run = mysqli_query($conn, $query);
         $user_arr = mysqli_fetch_array($query_run);
         if (mysqli_num_rows($query_run) > 0) {
-            $response = array("success" => true,"firstName" => $user_arr['ime'], "lastName" => $user_arr['prezime'], "role" => $user_arr['tip_korisnika'], 'email' => $user_arr['email']);
+            $response = array("success" => true,"firstName" => $user_arr['ime'], "lastName" => $user_arr['prezime'], "role" => $user_arr['tip_korisnika'], 'email' => $user_arr['email'], 'img' => $user_arr['slika_url']);
         } else {
             http_response_code(401);
             $response = array('error' => 'Invalid credentials');
