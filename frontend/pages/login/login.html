@@ -1,5 +1,56 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="./login.css">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="./logo.png" />
+    </div>
+    <div class="login-container">
+        
+            <div class="login-form">
+                <span class="login-title">Login</span>
+
+                <form id="login-form">
+                    <div class="login-input">
+                        <input type="email" name="email" id="login-email" placeholder="Enter your email" required>
+                        <i class="uil uil-user login-icon"></i>
+                    </div>
+                    <div class="login-input">
+                        <input type="password" name="password" id="login-pass" placeholder="Enter your password" required>
+                        <i class="uil uil-lock login-icon"></i>
+                        <i class="uil uil-eye-slash login-hideShow" onclick="showHidePass()"></i>
+                    </div>
+
+                  
+
+                    <div class="login-button">
+                        <input type="submit" value="Login Now">
+                    </div>
+
+                    <div class="login-signup">
+                        <span>New to Fitness ECommerce?
+                            <a href="../registration/registration.html" class="login-text">Sign up!</a>
+                        </span>
+                    </div>
+
+                </form>
+                
+            </div>
+        </div>
+    
+
+    <script src="./login.js"></script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8">
     <title>Fitness E-commerce Registration</title>
@@ -25,4 +76,4 @@
 
     <script src="./login.js"></script>
   </body>
-</html>
+</html> -->

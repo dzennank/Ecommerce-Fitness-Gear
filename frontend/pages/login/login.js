@@ -1,3 +1,16 @@
+const Password = document.getElementById("login-pass");
+const Icon = document.getElementsByClassName("login-hideShow")[0];
+
+const showHidePass = () => {
+	if (Password.type === "password") {
+		Password.type = "text";
+		Icon.classList.replace("uil-eye-slash", "uil-eye");
+	} else {
+		Password.type = "password";
+		Icon.classList.replace("uil-eye", "uil-eye-slash");
+	}
+};
+
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {
@@ -6,8 +19,8 @@ document
   });
 
 const sendLoginData = () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-pass").value;
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../../backend/api/login_controller.php", true);
