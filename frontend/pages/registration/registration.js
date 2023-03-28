@@ -99,7 +99,14 @@ body: formData
 .then(data => {
 console.log(data);
 if (data.success) {
-location.href = "../login/login.html";
+    const btn = document.getElementById("pop-up-btn");
+ const popup = document.querySelector(".popup");
+ popup.style.display = "flex";
+ btn.addEventListener("click", () => {
+        popup.style.display = "none";
+        location.href = "../login/login.html";
+         });
+
 } else {
 alert("Error");
 }

@@ -6,49 +6,51 @@
     <link rel="stylesheet" type="text/css" href="./registration.css">
   </head>
   <body>
+
+    <div class="popup">
+      <div class="popup-content">
+        <h2>Thank you!</h2>
+        <p>Your account is successfuly created, please log in now to continue using our Fitness Ecommerce.</p>
+        <button id="pop-up-btn">Close</button>
+      </div>
+      </div>
+
     <div class="container">
       <h2>Fitness E-commerce Registration</h2>
       <form id="registration-form">
-        <label for="firstName">Ime:</label>
-        <input type="text" id="firstName" name="firstName" required>
         
-        <label for="lastName">Prezime:</label>
-        <input type="text" id="lastName" name="lastName" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Lozinka:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <label for="confirmPassword">Potvrdi Lozinku:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-        
-        <label>Pol :</label>
-          <input type="radio" name="sex" value="musko"> Musko
-          <input type="radio" name="sex" value="zensko"> Zensko
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
         
         
-        <label for="">Mesto Rodjenja:</label>
-        <input type="text" id="place_birth" name="place_birth">
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+       
+        <input type="email" id="email" name="email" placeholder="Email" required>
+       
+        <input type="password" id="password" name="password" placeholder="Password" required>
         
-        <label for="city">Drzava Rodjenja:</label>
-        <input type="text" id="country" name="country" required>
         
-        <label for="">Datum Rodjenja:</label>
-        <input type="date" id="birthday" name="birthday" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confrim Password" required>
         
-        <label for="">JMBG:</label>
-        <input type="text" id="jmbg" name="jmbg" required>
+        <label>Gender :</label>
+          <input type="radio" name="sex" value="musko"> Male
+          <input type="radio" name="sex" value="zensko"> Female
+     
+        <input type="text" id="place_birth" name="place_birth" placeholder="City" required>
+     
+        <input type="text" id="country" name="country" placeholder="Country" required>
+        <label for="">BirthDay:</label>
+        <input type="date" id="birthday" name="birthday" placeholder="BirthDay" required>
+      
+        <input type="text" id="jmbg" name="jmbg" placeholder="JMBG" required>
         
-        <label for="phone">Telefon:</label>
-        <input type="text" id="phone" name="phone" required>
+       
+        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
         
-        <label for="img">Slika:</label>
+        <label for="img">Image:</label>
         <input type="file" name="image" id="image" accept="image/*">
-        <label>Tip :</label>
-        <input type="radio" name="type" value="kupac"> Kupac
-        <input type="radio" name="type" value="prodavac"> Prodavac
+        <label>User Type :</label>
+        <input type="radio" name="type" value="kupac"> Buyer
+        <input type="radio" name="type" value="prodavac"> Seller
         
         <input type="submit" value="Submit" class="submit">
       </form>
