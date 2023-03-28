@@ -60,7 +60,7 @@ button.addEventListener("click", function(){
                       localStorage.removeItem("productForCart");
 
                           popup.style.display = "none";
-                          location.href = "../homePage/homePage.html";
+                          location.href = "../../../index.html";
                           
                         
                       });

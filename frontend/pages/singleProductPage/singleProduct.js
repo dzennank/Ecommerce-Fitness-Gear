@@ -29,7 +29,7 @@ getUser().then((user) => {
         .then((data) => {
           console.log(data);
           alert("Product succesfully deleted");
-          location.href = "../homePage/homePage.html";
+          location.href = "../../../index.html";
         });
     });
   }

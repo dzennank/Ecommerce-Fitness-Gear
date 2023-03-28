@@ -1,11 +1,11 @@
 // import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
 import { fetchHomePageData } from "./fatchHomePageData.js";
-import { handleLogOut } from "../../logOut/handleLogOut.js";
 import { getUser } from "../../../getUser.js";
 const clothesContainer = document.getElementById("products-cont");
 // const userInfo = document.getElementById("header-user-name");
 const myProducts = document.getElementById("prodavac");
-
+const currentUrl = window.location.pathname
+console.log(currentUrl);
 getUser().then(user => {
   console.log(user)
   
@@ -22,14 +22,14 @@ getUser().then(user => {
     if (user.role === "prodavac") {
 
       myProducts.innerHTML = "My Products";
-      myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
+      myProducts.href = "frontend/pages/vendorProducts/vendorProducts.html";
     
     } else if (user.role === "Admin") {
       myProducts.innerHTML = "Dashboard";
-      myProducts.href = "../../admin/dashboardPage/dashboard/index.html"
+      myProducts.href = "frontend/admin/dashboardPage/dashboard/index.html"
     }
   } else {
-    userInfo.innerHTML = "Guest"
+    document.getElementById("header-user-name").innerHTML = "Guest"
   }
 })
 fetchHomePageData().then(([supp, clothes, equip]) => {
@@ -56,7 +56,7 @@ fetchHomePageData().then(([supp, clothes, equip]) => {
 
     const viewMoreButton = document.createElement("a");
     viewMoreButton.href =
-      "../../pages/singleProductPage/singleProduct.html?id=" +
+      "frontend/pages/singleProductPage/singleProduct.html?id=" +
       clot.clothes_id +
       "&name=clothes";
     viewMoreButton.textContent = "View More";
@@ -90,7 +90,7 @@ fetchHomePageData().then(([supp, clothes, equip]) => {
 
     const viewMoreButton = document.createElement("a");
     viewMoreButton.href =
-      "../../pages/singleProductPage/singleProduct.html?id=" +
+      "frontend/pages/singleProductPage/singleProduct.html?id=" +
       equip.equipment_id +
       "&name=equipment";
     viewMoreButton.textContent = "View More";
@@ -124,7 +124,7 @@ fetchHomePageData().then(([supp, clothes, equip]) => {
 
     const viewMoreButton = document.createElement("a");
     viewMoreButton.href =
-      "../../pages/singleProductPage/singleProduct.html?id=" +
+      "frontend/pages/singleProductPage/singleProduct.html?id=" +
       supp.supplement_id +
       "&name=supplement";
     viewMoreButton.textContent = "View More";
@@ -171,4 +171,28 @@ console.log(user);
 
 //handle logout btn
 const lgnButton = document.getElementById("log-out");
-handleLogOut(lgnButton);
+lgnButton.addEventListener("click", ()=>{
+  const token = JSON.parse(localStorage.getItem("token"));
+return fetch("backend/api/deleteToken_controller.php", {
+  method: "POST",
+  headers: {
+    "Authorization": `Bearer ${token}`
+  },
+  
+})
+  .then(response => response.json())
+  .then(data => {
+      console.log(data)
+      if(data.success) {
+        localStorage.clear()
+        location.href = "frontend/pages/login/login.html"
+      }
+      else {
+        console.log("Error from response")
+      } 
+  })
+      
+  
+
+
+})

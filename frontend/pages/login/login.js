@@ -33,7 +33,7 @@ const sendLoginData = () => {
       localStorage.setItem("token", JSON.stringify(response.token));
       const token = JSON.parse(localStorage.getItem("token"));
       console.log(token)
-      location.href = "../homePage/homePage.html";
+      location.href = "../../../index.html";
     } else {
       alert("Error");
     }

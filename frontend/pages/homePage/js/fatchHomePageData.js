@@ -5,7 +5,7 @@ export const fetchHomePageData = () => {
 
   // fetch supplement data
   promises.push(
-    fetch("../../../backend/api/suppBestSeller_controller.php")
+    fetch("backend/api/suppBestSeller_controller.php")
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -17,7 +17,7 @@ export const fetchHomePageData = () => {
 
   // fetch clothes data
   promises.push(
-    fetch("../../../backend/api/clothesBestSeller_controller.php")
+    fetch("backend/api/clothesBestSeller_controller.php")
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -29,7 +29,7 @@ export const fetchHomePageData = () => {
 
   // fetch equipment data
   promises.push(
-    fetch("../../../backend/api/equipBestSeller_controller.php")
+    fetch("backend/api/equipBestSeller_controller.php")
       .then(response => {
         if (response.ok) {
           return response.json();

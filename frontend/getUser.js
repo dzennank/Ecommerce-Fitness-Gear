@@ -1,7 +1,12 @@
 export const getUser = () => {
     const token = JSON.parse(localStorage.getItem("token"));
     console.log(token)
-    return fetch("../../../backend/api/tokenAuth_controller.php", {
+    let url = "../../../backend/api/tokenAuth_controller.php";
+    //WINDOW LCATION PATH NEED TO CHANGE WHEN APPLICATION HOSTED
+    if(window.location.pathname === "/fitness-ecommerce/Ecommerce-Fitness-Gear/index.html"){
+      url = "backend/api/tokenAuth_controller.php"
+    }
+    return fetch(url, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`
@@ -15,7 +20,6 @@ export const getUser = () => {
 
 //Checking which user is loged in
 export const checkUser= () => {
-  const userInfo = document.getElementById("header-user-name");
 const myProducts = document.getElementById("prodavac");
 const infoCont = document.getElementById("user-info");
 getUser().then(user => {
