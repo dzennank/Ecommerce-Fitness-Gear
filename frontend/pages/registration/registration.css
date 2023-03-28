@@ -45,7 +45,7 @@ body {
   }
   
   .submit {
-    background-color: #333;
+    background-color: #114BEE;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -56,7 +56,7 @@ body {
   }
 
   .submit:hover{
-    background-color: #fff;
+    background-color: #EEB411;
     color: #333;
   }
   
