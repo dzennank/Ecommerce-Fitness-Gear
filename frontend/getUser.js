@@ -27,7 +27,7 @@ getUser().then(user => {
     userInfo.id = "header-user-name";
     userInfo.innerHTML = `${user.firstName}  ${user.lastName}`;
     infoCont.appendChild(userInfo);
-    if (user.role === "Kupac") {
+    if (user.role === "prodavac") {
       myProducts.innerHTML = "My Products";
       myProducts.href = "../../pages/vendorProducts/vendorProducts.html";
     
