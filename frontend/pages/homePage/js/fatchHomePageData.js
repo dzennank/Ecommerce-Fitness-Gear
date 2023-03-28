@@ -1,69 +1,45 @@
-// import {  } from "../../../../backend/api/";
-export const fatchHomePageData = () => {
+// import {} from "../../../../backend/api"
+
+export const fetchHomePageData = () => {
   const promises = [];
 
-  const getSupp = new XMLHttpRequest();
-  getSupp.open(
-    "GET",
-    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/suppBestSeller_controller.php",
-    true
-  );
+  // fetch supplement data
   promises.push(
-    new Promise((resolve, reject) => {
-      getSupp.onload = () => {
-        if (getSupp.status === 200) {
-          resolve(JSON.parse(getSupp.responseText));
+    fetch("../../../backend/api/suppBestSeller_controller.php")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
         } else {
-          reject(getSupp.statusText);
+          throw new Error('Network response was not ok.');
         }
-      };
-      getSupp.onerror = () => reject(getSupp.statusText);
-      getSupp.send();
-    })
+      })
   );
 
-  //fatch clothes
-  const getClothes = new XMLHttpRequest();
-  getClothes.open(
-    "GET",
-    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/clothesBestSeller_controller.php",
-    true
-  );
+  // fetch clothes data
   promises.push(
-    new Promise((resolve, reject) => {
-      getClothes.onload = () => {
-        if (getSupp.status === 200) {
-          resolve(JSON.parse(getClothes.responseText));
+    fetch("../../../backend/api/clothesBestSeller_controller.php")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
         } else {
-          reject(getClothes.statusText);
+          throw new Error('Network response was not ok.');
         }
-      };
-
-      getClothes.onerror = () => reject(getClothes.statusText);
-      getClothes.send();
-    })
+      })
   );
 
-  //fatch equipment
-  const getEquip = new XMLHttpRequest();
-  getEquip.open(
-    "GET",
-    "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/backend/api/equipBestSeller_controller.php",
-    true
-  );
+  // fetch equipment data
   promises.push(
-    new Promise((resolve, reject) => {
-      getEquip.onload = () => {
-        if (getSupp.status === 200) {
-          resolve(JSON.parse(getEquip.responseText));
+    fetch("../../../backend/api/equipBestSeller_controller.php")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
         } else {
-          reject(getEquip.statusText);
+          throw new Error('Network response was not ok.');
         }
-      };
-
-      getEquip.onerror = () => reject(getEquip.statusText);
-      getEquip.send();
-    })
+      })
   );
+
   return Promise.all(promises);
-};
+    }
+
+

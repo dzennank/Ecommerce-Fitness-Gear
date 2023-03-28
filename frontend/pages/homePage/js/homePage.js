@@ -1,4 +1,5 @@
-import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
+// import { fatchHomePageData } from "http://localhost/fitness-ecommerce/Ecommerce-Fitness-Gear/frontend/pages/homePage/js/fatchHomePageData.js";
+import { fetchHomePageData } from "./fatchHomePageData.js";
 import { handleLogOut } from "../../logOut/handleLogOut.js";
 import { getUser } from "../../../getUser.js";
 const clothesContainer = document.getElementById("products-cont");
@@ -31,7 +32,7 @@ getUser().then(user => {
     userInfo.innerHTML = "Guest"
   }
 })
-fatchHomePageData().then(([supp, clothes, equip]) => {
+fetchHomePageData().then(([supp, clothes, equip]) => {
   console.log("SUPLEMENTI: ", supp);
   console.log("OPREMA: ", equip);
   console.log("ODECA: ", clothes);
