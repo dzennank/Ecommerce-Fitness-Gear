@@ -247,15 +247,58 @@ footer form .btn-primary {
 }
 
 @media (max-width: 768px) {
-  footer h4 {
-    font-size: 18px;
-  }
-  
-  footer ul li {
+
+
+  .header-menu a {
     font-size: 14px;
-  }
-  
-  footer form .form-control {
-    width: 100%;
-  }
+    }
+    
+    /* Stack the menu items vertically */
+    .header-menu {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+    }
+    
+    /* Increase the margin between the menu items */
+    .header-menu li {
+    margin: 10px 0;
+    }
+    
+    /* Adjust the padding of the navigation bar */
+    .header-nav {
+    padding: 10px;
+    }
+    
+    /* Make the logo smaller */
+    .header-logo img {
+    width: 30px;
+    height: 30px;
+    }
+    
+    /* Make the user avatar smaller */
+    .header-user-info img {
+    width: 30px;
+    height: 30px;
+    }
+    
+    /* Decrease the font size of the user name */
+    #header-user-name {
+    font-size: 14px;
+    }
+
+    
+
+
+    footer h4 {
+      font-size: 18px;
+    }
+    
+    footer ul li {
+      font-size: 14px;
+    }
+    
+    footer form .form-control {
+      width: 100%;
+    }
 }
